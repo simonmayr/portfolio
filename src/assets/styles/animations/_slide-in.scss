@@ -1,0 +1,18 @@
+.slideIn {
+	visibility: visible;
+	animation-name: slideIn;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+}
+
+@keyframes slideIn {
+	0% {
+		animation-timing-function: cubic-bezier(0.15, 0.7, 0.78, 1);
+		translate: 0 -100%;
+		opacity: 0;
+	}
+	100% {
+		translate: 0 0;
+		opacity: 1;
+	}
+}

@@ -1,0 +1,33 @@
+.container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-inline: auto;
+	@media (min-width: $xs) {
+		max-width: var(--container-xs);
+	}
+	@media (min-width: $sm) {
+		max-width: var(--container-sm);
+	}
+	@media (min-width: $md) {
+		max-width: var(--container-md);
+	}
+	@media (min-width: $xl) {
+		max-width: var(--container-xl);
+	}
+	&.frame-none {
+		max-width: 100%;
+		padding: 0;
+	}
+	&__desktop {
+		@media (max-width: $md) {
+			display: none;
+		}
+	}
+	&__mobile {
+		display: none;
+		@media (max-width: $md) {
+			display: block;
+		}
+	}
+}
