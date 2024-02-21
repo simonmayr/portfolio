@@ -13,7 +13,7 @@
 			<div class="navigation__burger">
 				<NavigationBurger />
 			</div>
-			<div class="navigation__logo">simon.</div>
+			<div class="navigation__logo">simon<span>.</span></div>
 			<div class="navigation__social">
         <Fa icon={faInstagram} scale={1.4} />
 				<Fa icon={faGitlab} scale={1.4} />
@@ -38,6 +38,9 @@
 			font-size: 2rem;
 			font-weight: 600;
 			text-align: center;
+			span {
+				color: #32daf1;
+			}
 		}
 		&__social {
 			display: flex;

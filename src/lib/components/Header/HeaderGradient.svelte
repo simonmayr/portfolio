@@ -20,7 +20,7 @@
 		inset: 0;
 		&--blue {
 			background: rgb(255, 255, 255);
-			background: linear-gradient(330deg, rgba(255, 255, 255, 0) 70%, rgba(231, 248, 250, 1) 100%);
+			background: linear-gradient(330deg, rgba(255, 255, 255, 0) 70%, rgb(221, 243, 246) 100%);
 		}
 		&--purple {
 			background: rgb(255, 255, 255);

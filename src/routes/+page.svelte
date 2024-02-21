@@ -8,16 +8,22 @@
 	let hideLoading = false;
 
 	onMount(() => {
+		hideLoading = true;
 		setTimeout(() => {
-			hideLoading = true;
-			setTimeout(() => {
-				startAnimation = true;
-			}, 1000);
-		}, 1000);
+			startAnimation = true;
+		}, 200);
 	});
 </script>
 
-<PageLoading {hideLoading} />
+<!-- <PageLoading {hideLoading} /> -->
 
 <Navigation {startAnimation} />
 <Header {startAnimation} />
+
+<div class="placeholder"></div>
+
+<style lang="scss">
+	.placeholder {
+		height: 500vh;
+	}
+</style>

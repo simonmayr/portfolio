@@ -1,0 +1,20 @@
+.fadeRotateOut {
+	visibility: visible;
+	animation-name: fadeRotateOut;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	display: block;
+}
+
+@keyframes fadeRotateOut {
+	0% {
+		opacity: 1;
+		transform: none;
+	}
+	100% {
+		opacity: 0;
+		transform: rotateX(60deg) rotateY(10deg) rotateZ(-10deg);
+		transform-origin: top;
+		animation-timing-function: cubic-bezier(0.15, 0.7, 0.78, 1);
+	}
+}

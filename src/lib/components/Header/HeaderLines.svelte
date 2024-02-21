@@ -69,6 +69,8 @@
 		&__line {
 			position: absolute;
 			z-index: 1;
+			filter: blur(8px);
+			animation: move 10s infinite alternate;
 			svg {
 				display: block;
 			}
@@ -84,6 +86,19 @@
 				left: 0;
 				bottom: 0px;
 			}
+		}
+	}
+
+	@keyframes move {
+		0% {
+			rotate: 0deg;
+			scale: 1;
+			translate: 0px 0px;
+		}
+		100% {
+			rotate: 2deg;
+			scale: 1.1;
+			translate: -10px -6px;
 		}
 	}
 </style>

@@ -1,0 +1,21 @@
+.btn {
+	text-decoration: none;
+	background-color: transparent;
+	color: black;
+	border: none;
+	font-size: inherit;
+	padding: 10px 30px;
+	border-radius: 12px;
+	display: inline-block;
+	transition: 200ms;
+	&:active {
+		scale: 0.95;
+	}
+	&--blue {
+		background-color: #31daf1;
+		color: #013a48;
+		&:hover {
+			background-color: #2acbe0;
+		}
+	}
+}
