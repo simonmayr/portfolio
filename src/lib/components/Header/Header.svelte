@@ -20,7 +20,7 @@
 
 <style lang="scss">
 	.header {
-		height: 100dvh;
+		height: calc(100dvh + var(--about-overlap));
 		width: 100vw;
 		position: relative;
 		display: flex;

@@ -7,7 +7,7 @@
 
 @keyframes slideOut {
 	0% {
-		animation-timing-function: cubic-bezier(0.15, 0.7, 0.78, 1);
+		animation-timing-function: var(--ease-out-short);
 		translate: 0 0;
 	}
 	100% {

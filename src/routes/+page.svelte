@@ -2,6 +2,7 @@
 	import Header from '$lib/components/Header/Header.svelte';
 	import PageLoading from '$lib/components/Loading/PageLoading.svelte';
 	import Navigation from '$lib/components/Navigation/Navigation.svelte';
+	import About from '$lib/components/Widgets/About.svelte';
 	import { onMount } from 'svelte';
 
 	let startAnimation = false;
@@ -19,6 +20,7 @@
 
 <Navigation {startAnimation} />
 <Header {startAnimation} />
+<About {startAnimation} />
 
 <div class="placeholder"></div>
 
