@@ -6,3 +6,9 @@ body {
 	background-color: var(--bg-white);
   margin: 0;
 }
+
+.fixed {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}

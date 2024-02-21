@@ -30,12 +30,13 @@
 		justify-content: space-between;
 		width: 50px;
 		height: 28px;
-		border-radius: 4px;
 		&__bar {
 			display: block;
 			width: 100%;
 			height: 3px;
 			background-color: black;
+			border-radius: 6px;
+
 			// &:nth-child(1) {
 			// 	background-color: #32daf1;
 			// }

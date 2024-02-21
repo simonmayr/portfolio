@@ -1,17 +1,16 @@
 <script lang="ts">
-	import { inViewport, outViewport } from '$lib/utils/actions/viewport';
-	export let startAnimation: boolean;
+	import { inViewport, outViewport } from '$lib/actions/viewport';
 	let roundBorder = false;
 </script>
 
-<div
+<section
 	class="about"
 	class:about--round-radius={roundBorder}
 	use:inViewport={() => (roundBorder = true)}
 	use:outViewport={() => (roundBorder = false)}
 >
 	<h2>Das bin ich</h2>
-</div>
+</section>
 
 <style lang="scss">
 	.about {
@@ -22,7 +21,7 @@
 		background-color: white;
 		position: relative;
 		z-index: 1;
-		transition: 1s var(--ease-elastic-2);
+		transition: 1s var(--ease-elastic-1);
 		&--round-radius {
 			border-top-left-radius: 100%;
 			border-top-right-radius: 100%;
