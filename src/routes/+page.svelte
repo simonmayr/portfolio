@@ -24,10 +24,12 @@
 <!-- <About /> -->
 <Timeline />
 
+<h1>THE END.</h1>
+
 <div class="placeholder"></div>
 
 <style lang="scss">
 	.placeholder {
-		height: 100vh;
+		height: 200vh;
 	}
 </style>

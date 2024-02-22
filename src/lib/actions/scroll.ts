@@ -11,16 +11,16 @@ export const horizontalWheelScroll = (node: HTMLElement) => {
 		(scrollContent?.getClientRects()[0].width ?? 0) -
 		(scrollWrapper?.getClientRects()[0].width ?? 0);
 
-	node.style.height = node.getClientRects()[0].height + contentWidth + 'px';
+	const originalHeight = node.getClientRects()[0].height;
+
+	node.style.height = node.getClientRects()[0].width * 2 + contentWidth + 'px';
 
 	const checkScroll = (e: Event) => {
-		if (node.getClientRects()[0].top < 0) {
-			let percentage = Math.abs(node.getClientRects()[0].top) / node.getClientRects()[0].height;
-			console.log(percentage);
+		if (node.getClientRects()[0].top < 0 && node.getClientRects()[0].bottom > 0) {
+			let percentage =
+				Math.abs(node.getClientRects()[0].top) / (node.getClientRects()[0].height - originalHeight);
 
-			if (percentage < 0.01) {
-				percentage = 0;
-			}
+			percentage = Math.min(Math.max(percentage, 0), 1);
 
 			scrollContent.style.transform = `translateX(-${contentWidth * percentage}px)`;
 		}
