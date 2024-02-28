@@ -1,10 +1,15 @@
 <script lang="ts">
+	import { draw } from 'svelte/transition';
+	import elipse from '../../../assets/images/header/Ellipse.svg';
+	import HeaderEllipse from './HeaderEllipse.svelte';
+
 	export let startAnimation: boolean;
 </script>
 
 <div class="header">
 	<div class="header__hero">
-		<div class="hero-text hero-text--circle">
+		<HeaderEllipse {startAnimation} />
+		<div class="hero-text">
 			<span class="rotateIn" class:animate={startAnimation}
 				>Webdesign <span class="clr-primary">&</span></span
 			>
@@ -16,6 +21,7 @@
 	<div class="header__teaser fadeIn" class:animate={startAnimation}>
 		<a class="btn btn--blue" href="mailto:simon.j.mayr@gmail.com">Projekt Starten</a>
 	</div>
+	<div class="header__scroll-don"></div>
 </div>
 
 <style lang="scss">
@@ -54,22 +60,6 @@
 			text-align: right;
 			.rotateIn {
 				animation-delay: 0.2s;
-			}
-		}
-		&--circle {
-			&::before {
-				--_size: 180px;
-				content: '';
-				display: block;
-				position: absolute;
-				height: var(--_size);
-				width: var(--_size);
-				border: 4px solid var(--clr-primary);
-				border-radius: 100%;
-				top: -44px;
-				left: -20px;
-				box-shadow: 0 0 50px 0 var(--clr-primary-300);
-				z-index: -1;
 			}
 		}
 	}

@@ -22,17 +22,17 @@
 		padding: 15px 50px;
 		border: 2px solid var(--clr-primary);
 		border-radius: 500px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: -2px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 5px;
 		&__title {
 			font-size: 1.5rem;
 			line-height: 1.8;
 		}
-    &__tech {
-      display: flex;
-      gap: 10px;
-    }
+		&__tech {
+			display: flex;
+			gap: 10px;
+		}
 	}
 </style>

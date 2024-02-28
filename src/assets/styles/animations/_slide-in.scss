@@ -1,0 +1,19 @@
+.slideIn {
+	visibility: visible;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-timing-function: var(--ease-out-medium);
+	translate: 0 100%;
+	&.animate {
+		animation-name: slideIn;
+	}
+}
+
+@keyframes slideIn {
+	0% {
+		translate: 0 100%;
+	}
+	100% {
+		translate: 0 0;
+	}
+}

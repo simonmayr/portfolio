@@ -1,10 +1,17 @@
 <script>
+	import { inViewport } from '$lib/actions/viewport';
 	import SkillItem from './SkillItem.svelte';
+
+	let showHeadline = false;
 </script>
 
 <section class="skills">
 	<div class="container">
-		<h2 class="skills__headline headline">
+		<h2
+			class="skills__headline headline rotateIn"
+			class:animate={showHeadline}
+			use:inViewport={() => (showHeadline = true)}
+		>
 			was ich mache<span>.</span>
 		</h2>
 		<div class="skills__wrapper">

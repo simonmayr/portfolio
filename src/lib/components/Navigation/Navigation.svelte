@@ -7,7 +7,7 @@
 	export let startAnimation: boolean;
 </script>
 
-<div class="navigation slideFadeIn" class:animate={startAnimation}>
+<div class="navigation fadeIn" class:animate={startAnimation}>
 	<div class="container">
 		<div class="navigation__wrapper">
 			<div class="navigation__burger">
@@ -28,6 +28,7 @@
 		inset: 0 0 auto 0;
 		z-index: 10;
 		padding: 30px 0;
+		animation-delay: 1s;
 		&__wrapper {
 			display: grid;
 			align-items: center;

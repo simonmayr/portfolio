@@ -16,10 +16,16 @@
 			>
 				über mich<span>.</span>
 			</h2>
-			<div class="about__text" use:inViewport={() => (showText = true)}>
+			<div
+				class="about__text"
+				use:inViewport={() =>
+					setTimeout(() => {
+						showText = true;
+					}, 200)}
+			>
 				{#each aboutText.split(' ') as word, i}
 					<span class="overflow-hidden">
-						<span class="rotateIn" class:animate={showText} style={`animation-delay: ${i * 0.01}s;`}
+						<span class="slideIn" class:animate={showText} style={`animation-delay: ${i * 0.01}s;`}
 							>{word} {@html '&nbsp;'}</span
 						>
 					</span>
@@ -32,10 +38,14 @@
 <style lang="scss">
 	.about {
 		padding-bottom: 120px;
+		.slideIn {
+			display: inline-block;
+		}
 		&__content {
-			font-size: 1.5rem;
-			line-height: 1.8;
 			position: relative;
+			font-size: 1.5rem;
+			line-height: 1.5;
+			font-weight: 300;
 		}
 		&__headline {
 			position: absolute;
