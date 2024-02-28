@@ -2,11 +2,7 @@
 	let navOpen = false;
 </script>
 
-<button class="navigation-burger" on:click={() => (navOpen = !navOpen)}>
-	<span class="navigation-burger__bar"></span>
-	<span class="navigation-burger__bar"></span>
-	<span class="navigation-burger__bar"></span>
-</button>
+<button class="navigation-burger" on:click={() => (navOpen = !navOpen)}> </button>
 
 <div class="navigation-dropdown" class:fadeRotateIn={navOpen}></div>
 
@@ -23,29 +19,23 @@
 		opacity: 0;
 	}
 	.navigation-burger {
+		--_size: 25px;
+		cursor: pointer;
+		position: relative;
+		display: block;
+		width: var(--_size);
+		height: var(--_size);
+		border: 2px solid var(--clr-primary);
+		border-radius: 100%;
 		background-color: transparent;
-		border: none;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		width: 50px;
-		height: 28px;
-		&__bar {
-			display: block;
-			width: 100%;
-			height: 3px;
-			background-color: black;
-			border-radius: 6px;
-
-			// &:nth-child(1) {
-			// 	background-color: #32daf1;
-			// }
-			// &:nth-child(2) {
-			// 	background-color: #ffa500;
-			// }
-			// &:nth-child(3) {
-			// 	background-color: #eb15e2;
-			// }
+		&::after {
+			content: 'Menü';
+			position: absolute;
+			top: 50%;
+			left: calc(100%);
+			padding-left: 15px;
+			translate: 0 -50%;
+			color: var(--clr-white);
 		}
 	}
 </style>

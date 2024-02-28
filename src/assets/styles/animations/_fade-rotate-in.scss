@@ -9,7 +9,7 @@
 @keyframes fadeRotateIn {
 	0% {
 		opacity: 0;
-		transform: rotateX(60deg) rotateY(10deg) rotateZ(-10deg);
+		transform: rotateX(40deg) rotateY(10deg) rotateZ(-5deg);
 		transform-origin: top;
 		animation-timing-function: var(--ease-out-short);
 	}

@@ -1,3 +1,13 @@
+body {
+	font-family: 'Heebo', sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	background-color: var(--clr-secondary);
+	color: var(--clr-white);
+  margin: 0;
+}
+
 .container {
 	width: 100%;
 	padding-right: 15px;

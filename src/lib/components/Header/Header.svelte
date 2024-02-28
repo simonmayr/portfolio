@@ -1,21 +1,17 @@
 <script lang="ts">
-	import HeaderGradient from './HeaderGradient.svelte';
-	import HeaderLines from './HeaderLines.svelte';
-
 	export let startAnimation: boolean;
 </script>
 
 <div class="header">
 	<div class="header__hero">
-		<span class="hero-text" class:fadeRotateIn={startAnimation}>Webdesign <span>&</span></span>
+		<span class="hero-text hero-text--circle" class:fadeRotateIn={startAnimation}
+			>Webdesign <span>&</span></span
+		>
 		<span class="hero-text" class:fadeRotateIn={startAnimation}>Entwicklung</span>
 	</div>
 	<div class="header__teaser" class:fadeIn={startAnimation}>
-		<a class="btn btn--blue" href="mailto:simon.j.mayr@gmail.com">Kontakt</a>
+		<a class="btn btn--blue" href="mailto:simon.j.mayr@gmail.com">Projekt Starten</a>
 	</div>
-	<HeaderLines {startAnimation} />
-	<HeaderGradient {startAnimation} />
-	<div class="header__scroll">scroll</div>
 </div>
 
 <style lang="scss">
@@ -40,16 +36,9 @@
 		&__teaser {
 			z-index: 2;
 			width: 60ch;
-			text-align: center;
 			opacity: 0;
 			animation-delay: 1.6s;
 			margin-top: 25px;
-		}
-		&__scroll {
-			position: absolute;
-			inset: auto 0 0 0;
-			display: flex;
-			justify-content: center;
 		}
 	}
 	.hero-text {
@@ -67,6 +56,22 @@
 		&:last-child {
 			text-align: right;
 			animation-delay: 1s;
+		}
+		&--circle {
+			&::before {
+				--_size: 180px;
+				content: '';
+				display: block;
+				position: absolute;
+				height: var(--_size);
+				width: var(--_size);
+				border: 4px solid var(--clr-primary);
+				border-radius: 100%;
+				top: -44px;
+				left: -20px;
+				box-shadow: 0 0 50px 0 var(--clr-primary-300);
+				z-index: -1;
+			}
 		}
 	}
 </style>

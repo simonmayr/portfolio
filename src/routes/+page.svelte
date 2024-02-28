@@ -2,6 +2,7 @@
 	import Header from '$lib/components/Header/Header.svelte';
 	// import PageLoading from '$lib/components/Loading/PageLoading.svelte';
 	import Navigation from '$lib/components/Navigation/Navigation.svelte';
+	import Skills from '$lib/components/Widgets/Skills.svelte';
 	import About from '$lib/components/Widgets/About.svelte';
 	import Timeline from '$lib/components/Widgets/Timeline.svelte';
 	import { onMount } from 'svelte';
@@ -21,10 +22,9 @@
 
 <Navigation {startAnimation} />
 <Header {startAnimation} />
-<!-- <About /> -->
-<Timeline />
-
-<h1>THE END.</h1>
+<About />
+<Skills />
+<!-- <Timeline /> -->
 
 <div class="placeholder"></div>
 

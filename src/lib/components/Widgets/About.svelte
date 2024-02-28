@@ -9,22 +9,32 @@
 	use:inViewport={() => (roundBorder = true)}
 	use:outViewport={() => (roundBorder = false)}
 >
-	<h2>Das bin ich</h2>
+	<div class="container">
+		<div class="about__content">
+			<h2 class="about__headline headline">über mich<span>.</span></h2>
+			<span class="about__text"
+				>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+				invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+				et justo duo dolores et ea rebum. At vero eos et accusam et justo duo dolores et ea rebum.
+				At vero eos et accusam et justo duo dolores et ea rebum.</span
+			>
+		</div>
+	</div>
 </section>
 
 <style lang="scss">
 	.about {
-		padding-top: 60px;
-		border-top-left-radius: 0;
-		border-top-right-radius: 0;
-		margin-top: calc(var(--about-overlap) * -1);
-		background-color: white;
-		position: relative;
-		z-index: 1;
-		transition: 1s var(--ease-elastic-1);
-		&--round-radius {
-			border-top-left-radius: 100%;
-			border-top-right-radius: 100%;
+		padding-bottom: 120px;
+		&__content {
+			font-size: 1.5rem;
+			line-height: 1.8;
+		}
+		&__headline {
+			margin-bottom: 15px;
+			display: inline;
+		}
+		&__text {
+			margin-left: 20px;
 		}
 	}
 </style>
