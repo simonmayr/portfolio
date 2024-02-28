@@ -4,12 +4,16 @@
 
 <div class="header">
 	<div class="header__hero">
-		<span class="hero-text hero-text--circle" class:fadeRotateIn={startAnimation}
-			>Webdesign <span>&</span></span
-		>
-		<span class="hero-text" class:fadeRotateIn={startAnimation}>Entwicklung</span>
+		<div class="hero-text hero-text--circle">
+			<span class="rotateIn" class:animate={startAnimation}
+				>Webdesign <span class="clr-primary">&</span></span
+			>
+		</div>
+		<div class="hero-text">
+			<span class="rotateIn" class:animate={startAnimation}>Entwicklung</span>
+		</div>
 	</div>
-	<div class="header__teaser" class:fadeIn={startAnimation}>
+	<div class="header__teaser fadeIn" class:animate={startAnimation}>
 		<a class="btn btn--blue" href="mailto:simon.j.mayr@gmail.com">Projekt Starten</a>
 	</div>
 </div>
@@ -36,8 +40,8 @@
 		&__teaser {
 			z-index: 2;
 			width: 60ch;
-			opacity: 0;
-			animation-delay: 1.6s;
+			animation-delay: 1s;
+			animation-duration: 2s;
 			margin-top: 25px;
 		}
 	}
@@ -45,17 +49,12 @@
 		font-size: 110px;
 		line-height: 1;
 		font-weight: 800;
-		opacity: 0;
-		span {
-			color: #32daf1;
-		}
-		&:first-child {
-			text-align: left;
-			animation-delay: 0.8s;
-		}
+		overflow: hidden;
 		&:last-child {
 			text-align: right;
-			animation-delay: 1s;
+			.rotateIn {
+				animation-delay: 0.2s;
+			}
 		}
 		&--circle {
 			&::before {

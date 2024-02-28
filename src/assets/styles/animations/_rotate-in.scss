@@ -1,0 +1,24 @@
+.rotateIn {
+	visibility: visible;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-timing-function: var(--ease-out-medium);
+	display: inline-block;
+	opacity: 0;
+	transform: rotateX(60deg) rotateY(10deg) rotateZ(-5deg);
+	&.animate {
+		animation-name: rotateIn;
+	}
+}
+
+@keyframes rotateIn {
+	0% {
+		opacity: 0;
+		transform: rotateX(60deg) rotateY(10deg) rotateZ(-5deg);
+		transform-origin: top;
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}

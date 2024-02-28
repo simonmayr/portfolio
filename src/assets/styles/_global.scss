@@ -12,3 +12,16 @@
 	top: 0;
 	width: 100%;
 }
+
+.clr-primary {
+	color: var(--clr-primary);
+}
+
+.clr-secondary {
+	color: var(--clr-secondary);
+}
+
+.overflow-hidden {
+	display: inline-block;
+	overflow: hidden;
+}

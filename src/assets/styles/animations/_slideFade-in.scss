@@ -1,19 +1,22 @@
-.fadeIn {
+.slideFadeIn {
 	visibility: visible;
 	animation-duration: 1s;
 	animation-fill-mode: both;
 	animation-timing-function: var(--ease-out-medium);
+	translate: 0 -100%;
 	opacity: 0;
 	&.animate {
-		animation-name: fadeIn;
+		animation-name: slideFadeIn;
 	}
 }
 
-@keyframes fadeIn {
+@keyframes slideFadeIn {
 	0% {
+		translate: 0 -100%;
 		opacity: 0;
 	}
 	100% {
+		translate: 0 0;
 		opacity: 1;
 	}
 }

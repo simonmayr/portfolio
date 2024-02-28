@@ -1,13 +1,12 @@
-const options = {
-	rootMargin: '-200px'
-};
-
-export const inViewport = (e: HTMLElement, callback: () => void) => {
-	const observer = new IntersectionObserver((entries) => {
-		if (entries[0].isIntersecting) {
-			callback();
-		}
-	}, options);
+export const inViewport = (e: HTMLElement, callback: () => void, rootMargin: string = '-200px') => {
+	const observer = new IntersectionObserver(
+		(entries) => {
+			if (entries[0].isIntersecting) {
+				callback();
+			}
+		},
+		{ rootMargin }
+	);
 
 	observer.observe(e);
 
@@ -18,12 +17,19 @@ export const inViewport = (e: HTMLElement, callback: () => void) => {
 	};
 };
 
-export const outViewport = (e: HTMLElement, callback: () => void) => {
-	const observer = new IntersectionObserver((entries) => {
-		if (!entries[0].isIntersecting) {
-			callback();
-		}
-	}, options);
+export const outViewport = (
+	e: HTMLElement,
+	callback: () => void,
+	rootMargin: string = '-200px'
+) => {
+	const observer = new IntersectionObserver(
+		(entries) => {
+			if (!entries[0].isIntersecting) {
+				callback();
+			}
+		},
+		{ rootMargin }
+	);
 
 	observer.observe(e);
 
