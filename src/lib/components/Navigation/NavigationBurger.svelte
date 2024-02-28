@@ -28,6 +28,23 @@
 		border: 2px solid var(--clr-primary);
 		border-radius: 100%;
 		background-color: transparent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&:hover::before {
+			scale: 1;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			scale: 0;
+			width: var(--_size);
+			height: var(--_size);
+			background-color: var(--clr-primary);
+			transition: 0.2s;
+			transform-origin: center;
+			border-radius: 100%;
+		}
 		&::after {
 			content: 'Menü';
 			position: absolute;

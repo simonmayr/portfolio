@@ -56,6 +56,9 @@
 		line-height: 1;
 		font-weight: 800;
 		overflow: hidden;
+		.rotateIn {
+			display: inline-block;
+		}
 		&:last-child {
 			text-align: right;
 			.rotateIn {
