@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { draw } from 'svelte/transition';
-	import elipse from '../../../assets/images/header/Ellipse.svg';
+	import HeaderBackground from './HeaderBackground.svelte';
 	import HeaderEllipse from './HeaderEllipse.svelte';
 
 	export let startAnimation: boolean;
 </script>
 
 <div class="header">
+	<!-- <HeaderBackground /> -->
 	<div class="header__hero">
 		<HeaderEllipse {startAnimation} />
 		<div class="hero-text">
@@ -26,7 +26,7 @@
 
 <style lang="scss">
 	.header {
-		height: calc(100dvh + var(--about-overlap));
+		height: calc(100dvh);
 		width: 100vw;
 		position: relative;
 		display: flex;
@@ -42,6 +42,7 @@
 			justify-content: center;
 			position: relative;
 			z-index: 2;
+			pointer-events: none;
 		}
 		&__teaser {
 			z-index: 2;

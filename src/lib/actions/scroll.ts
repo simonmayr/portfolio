@@ -7,15 +7,17 @@ export const horizontalWheelScroll = (node: HTMLElement) => {
 		return;
 	}
 
-	const contentWidth =
-		(scrollContent?.getClientRects()[0].width ?? 0) -
-		(scrollWrapper?.getClientRects()[0].width ?? 0);
-
+	const sumWidth = Array.from(scrollContent.children).reduce(
+		(acc, el) => acc + (el as HTMLElement).getClientRects()[0].width,
+		0
+	);
+	const contentWidth = sumWidth - (scrollWrapper.getClientRects()[0].width ?? 0);
 	const originalHeight = node.getClientRects()[0].height;
 
+	scrollContent.style.width = sumWidth + 'px';
 	node.style.height = node.getClientRects()[0].width * 2 + contentWidth + 'px';
 
-	const checkScroll = (e: Event) => {
+	const checkScroll = () => {
 		if (node.getClientRects()[0].top < 0 && node.getClientRects()[0].bottom > 0) {
 			let percentage =
 				Math.abs(node.getClientRects()[0].top) / (node.getClientRects()[0].height - originalHeight);
@@ -27,6 +29,7 @@ export const horizontalWheelScroll = (node: HTMLElement) => {
 	};
 
 	window.addEventListener('scroll', checkScroll);
+	checkScroll();
 
 	return {
 		destroy() {

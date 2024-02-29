@@ -15,7 +15,7 @@
 			</div>
 			<div class="navigation__logo">simon<span>.</span></div>
 			<div class="navigation__social">
-        <Fa icon={faInstagram} scale={1.4} />
+				<Fa icon={faInstagram} scale={1.4} />
 				<Fa icon={faGitlab} scale={1.4} />
 			</div>
 		</div>
