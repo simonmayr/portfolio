@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Fa from 'svelte-fa';
-	import { faGitlab, faInstagram } from '@fortawesome/free-brands-svg-icons';
+	import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 	import NavigationBurger from './NavigationBurger.svelte';
 
@@ -16,7 +16,7 @@
 			<div class="navigation__logo">simon<span>.</span></div>
 			<div class="navigation__social">
 				<Fa icon={faInstagram} scale={1.4} />
-				<Fa icon={faGitlab} scale={1.4} />
+				<Fa icon={faLinkedinIn} scale={1.4} />
 			</div>
 		</div>
 	</div>
@@ -44,7 +44,7 @@
 		}
 		&__social {
 			display: flex;
-			gap: 20px;
+			gap: 25px;
 			justify-content: flex-end;
 		}
 	}

@@ -1,0 +1,21 @@
+.clipIn {
+	visibility: visible;
+	animation-duration: 0.4s;
+	animation-fill-mode: both;
+	animation-timing-function: var(--ease-out-short);
+	opacity: 0;
+	&.animate {
+		animation-name: clipIn;
+	}
+}
+
+@keyframes clipIn {
+	0% {
+		opacity: 0;
+		clip-path: polygon(0 0, 100% 0, 100% 4%, 0 18%);
+	}
+	100% {
+		opacity: 1;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+}

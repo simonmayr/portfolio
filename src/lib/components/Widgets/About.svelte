@@ -9,12 +9,8 @@
 <section class="about">
 	<div class="container">
 		<div class="about__content">
-			<h2
-				class="about__headline headline rotateIn"
-				class:animate={showHeadline}
-				use:inViewport={() => (showHeadline = true)}
-			>
-				über mich<span>.</span>
+			<h2 class="about__headline headline" use:inViewport={() => (showHeadline = true)}>
+				simon mayr
 			</h2>
 			<div
 				class="about__text"
@@ -25,8 +21,10 @@
 			>
 				{#each aboutText.split(' ') as word, i}
 					<span class="overflow-hidden">
-						<span class="slideIn" class:animate={showText} style={`animation-delay: ${i * 0.01}s;`}
-							>{word} {@html '&nbsp;'}</span
+						<span
+							class="fadeTextIn"
+							class:animate={showText}
+							style={`animation-delay: ${i * 0.02}s;`}>{word} {@html '&nbsp;'}</span
 						>
 					</span>
 				{/each}
@@ -37,23 +35,20 @@
 
 <style lang="scss">
 	.about {
-		padding-bottom: 120px;
-		.slideIn {
-			display: inline-block;
-		}
+		padding: 150px 0;
 		&__content {
 			position: relative;
-			font-size: 1.5rem;
+			font-size: 2rem;
 			line-height: 1.5;
 			font-weight: 300;
 		}
 		&__headline {
 			position: absolute;
-			top: -9px;
+			top: -14px;
 		}
 		&__text {
 			> span:first-child {
-				margin-left: 170px;
+				margin-left: 290px;
 			}
 		}
 	}

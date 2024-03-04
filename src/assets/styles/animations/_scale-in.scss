@@ -1,0 +1,22 @@
+.scaleIn {
+	visibility: visible;
+	animation-duration: 0.6s;
+	animation-fill-mode: both;
+	animation-timing-function: var(--ease-out-long);
+	scale: 0;
+	border-radius: 500px;
+	&.animate {
+		animation-name: scaleIn;
+	}
+}
+
+@keyframes scaleIn {
+	0% {
+		scale: 0;
+		border-radius: 500px;
+	}
+	100% {
+		scale: 1;
+		border-radius: 16px;
+	}
+}

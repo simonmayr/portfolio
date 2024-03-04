@@ -1,6 +1,7 @@
 <script lang="ts">
 	import HeaderBackground from './HeaderBackground.svelte';
 	import HeaderEllipse from './HeaderEllipse.svelte';
+	import headerArrow from '../../../assets/icons/arrow-header.svg';
 
 	export let startAnimation: boolean;
 </script>
@@ -18,10 +19,9 @@
 			<span class="rotateIn" class:animate={startAnimation}>Entwicklung</span>
 		</div>
 	</div>
-	<div class="header__teaser fadeIn" class:animate={startAnimation}>
-		<a class="btn btn--blue" href="mailto:simon.j.mayr@gmail.com">Projekt Starten</a>
+	<div class="header__scroll-down fadeIn" class:animate={startAnimation}>
+		<img src={headerArrow} height="40" alt="Scroll Down" />
 	</div>
-	<div class="header__scroll-don"></div>
 </div>
 
 <style lang="scss">
@@ -44,12 +44,10 @@
 			z-index: 2;
 			pointer-events: none;
 		}
-		&__teaser {
-			z-index: 2;
-			width: 60ch;
+		&__scroll-down {
+			position: absolute;
+			bottom: 15px;
 			animation-delay: 1s;
-			animation-duration: 2s;
-			margin-top: 25px;
 		}
 	}
 	.hero-text {

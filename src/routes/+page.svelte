@@ -23,7 +23,7 @@
 <Navigation {startAnimation} />
 <Header {startAnimation} />
 <About />
-<Skills />
+<!-- <Skills /> -->
 <Projects />
 
 <div class="placeholder"></div>
