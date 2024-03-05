@@ -51,7 +51,7 @@
 		}
 	}
 	.hero-text {
-		font-size: 110px;
+		font-size: var(--fs-h1);
 		line-height: 1;
 		font-weight: 800;
 		overflow: hidden;

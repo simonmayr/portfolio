@@ -14,6 +14,8 @@
 				bgcolor="#FFFCF3"
 				title="Buddha Nepali Kitchen"
 				link="https://www.buddha-nepali-kitchen.at/"
+				gridColumn="span 5"
+				gridRow="span 5"
 				badges={['Typo3', 'PHP']}
 				image={buddhaNepaliKitchen}
 			/>
@@ -22,6 +24,8 @@
 				bgcolor="#FDF2FF"
 				title="Musikkapelle Völs"
 				link="https://www.mk-voels.at/"
+				gridColumn="8 / span 5"
+				gridRow="6 / span 5"
 				badges={['Typo3', 'PHP']}
 				image={mkv}
 			/>
@@ -29,6 +33,8 @@
 				color="#000000"
 				bgcolor="#E7ECFF"
 				title="Schwimmklub Zirl"
+				gridColumn="span 5"
+				gridRow="10 / span 5"
 				badges={['Symfony', 'PHP']}
 				image={swz}
 			/>
@@ -42,6 +48,9 @@
 		&__wrapper {
 			width: 100%;
 			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-auto-rows: 100px;
+			margin-top: 50px;
 		}
 	}
 </style>

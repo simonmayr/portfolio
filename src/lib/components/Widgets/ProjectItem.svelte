@@ -9,13 +9,15 @@
 	export let link: string | null = null;
 	export let image: string;
 	export let badges: string[];
+	export let gridColumn: string;
+	export let gridRow: string;
 
 	let showProject: boolean = false;
 </script>
 
 <div
 	class="project-item"
-	style={`--_color: ${color}; --_bgcolor: ${bgcolor}`}
+	style={`--_color: ${color}; --_bgcolor: ${bgcolor}; grid-column: ${gridColumn}; grid-row: ${gridRow}`}
 	use:inViewport={() => (showProject = true)}
 >
 	<div class="project-item__background scaleIn" class:animate={showProject}></div>
@@ -46,8 +48,7 @@
 		--_space-inside: 25px;
 		color: var(--_color);
 		padding: var(--_space-inside) var(--_space-inside) 0 var(--_space-inside);
-		aspect-ratio: 9/10;
-		width: 600px;
+		aspect-ratio: 9/12;
 		margin-bottom: 60px;
 		display: flex;
 		flex-direction: column;
@@ -66,7 +67,7 @@
 			}
 		}
 		&__header {
-			font-size: 2rem;
+			font-size: var(--fs-h3);
 			font-weight: 700;
 			margin: 0;
 			margin-bottom: 5px;
@@ -87,7 +88,7 @@
 		&__content {
 			display: flex;
 			justify-content: space-between;
-			align-items: center;
+			align-items: flex-start;
 			margin-bottom: 25px;
 			animation-delay: 0.6s;
 		}
@@ -100,7 +101,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: 15px;
+			padding: 12px;
 			border-radius: 100px;
 			transition: 400ms;
 			&:hover {
