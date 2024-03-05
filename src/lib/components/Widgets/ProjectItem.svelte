@@ -33,7 +33,7 @@
 		<div class="project-item__side">
 			{#if link}
 				<a class="project-item__link" href={link} target="_blank" aria-label={title} title={link}>
-					<img src={arrow} alt="External Link" />
+					<img src={arrow} width="15" alt="External Link" />
 				</a>
 			{/if}
 		</div>
@@ -101,9 +101,10 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: 12px;
+			padding: 10px;
 			border-radius: 100px;
 			transition: 400ms;
+			margin-top: 4px;
 			&:hover {
 				scale: 1.09;
 			}

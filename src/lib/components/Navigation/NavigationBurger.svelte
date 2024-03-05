@@ -11,7 +11,12 @@
 <div class="navigation-burger" class:navOpen>
 	<button class="navigation-burger__circle" on:click={() => (navOpen = !navOpen)}> </button>
 	<div class="navigation-backdrop"></div>
-	<div class="navigation-content"></div>
+	<div class="navigation-content">
+		<div class="container">
+			<a href="/test" on:click={() => (navOpen = false)}>Test</a>
+			<a href="/" on:click={() => (navOpen = false)}>Home</a>
+		</div>
+	</div>
 </div>
 
 <style lang="scss">
@@ -25,9 +30,10 @@
 		background-color: var(--clr-primary);
 		scale: 0;
 		border-radius: 100%;
-		transition: 0.8s;
+		transition: 0.4s;
 		.navOpen & {
 			scale: 1;
+			transition: 0.8s;
 		}
 	}
 	.navigation-burger {
@@ -69,6 +75,24 @@
 				translate: 0 -50%;
 				color: var(--clr-white);
 			}
+		}
+	}
+	.navigation-content {
+		position: absolute;
+		inset: 0;
+		opacity: 0;
+		pointer-events: none;
+		transition: 0.8s;
+		padding-top: 120px;
+		.navOpen & {
+			opacity: 1;
+			pointer-events: all;
+		}
+		a {
+			color: var(--clr-white);
+			font-size: 2rem;
+			text-decoration: none;
+			transition: 0.2s;
 		}
 	}
 </style>
