@@ -1,31 +1,38 @@
 <script lang="ts">
-	import { inViewport, outViewport } from '$lib/actions/viewport';
-	let showHeadline = false;
-	let showText = false;
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { onMount } from 'svelte';
 
 	let aboutText = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. At vero eos et accusam et justo duo dolores et ea rebum. At vero eos et accusam et justo duo dolores et ea rebum.`;
+
+	gsap.registerPlugin(ScrollTrigger);
+
+	onMount(() => {
+		gsap.from('.about__word', {
+			opacity: 0.1,
+			scrollTrigger: {
+				trigger: '.about__text',
+				start: 'top 90%',
+				end: 'bottom 60%',
+				// markers: true,
+				scrub: 1,
+			},
+			stagger: {
+				each: 0.03,
+				ease: 'power1.out'
+			}
+		});
+	});
 </script>
 
 <section class="about">
 	<div class="container">
 		<div class="about__content">
-			<h2 class="about__headline headline" use:inViewport={() => (showHeadline = true)}>
-				simon mayr
-			</h2>
-			<div
-				class="about__text"
-				use:inViewport={() =>
-					setTimeout(() => {
-						showText = true;
-					}, 200)}
-			>
-				{#each aboutText.split(' ') as word, i}
+			<h2 class="about__headline headline">simon mayr</h2>
+			<div class="about__text">
+				{#each aboutText.split(' ') as word, t}
 					<span class="overflow-hidden">
-						<span
-							class="fadeTextIn"
-							class:animate={showText}
-							style={`animation-delay: ${i * 0.02}s;`}>{word} {@html '&nbsp;'}</span
-						>
+						<span class="about__word">{word} {@html '&nbsp;'}</span>
 					</span>
 				{/each}
 			</div>

@@ -1,7 +1,12 @@
 <script lang="ts">
-	import { inViewport } from '$lib/actions/viewport';
-	import arrow from '../../../assets/icons/arrow.svg';
+	import { onMount } from 'svelte';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { gsap } from 'gsap';
+
+	import arrow from '../../../../assets/icons/arrow.svg';
 	import ProjectItemImage from './ProjectItemImage.svelte';
+
+	gsap.registerPlugin(ScrollTrigger);
 
 	export let color: string;
 	export let bgcolor: string;
@@ -12,16 +17,52 @@
 	export let gridColumn: string;
 	export let gridRow: string;
 
-	let showProject: boolean = false;
+	let projectItemEl: HTMLElement;
+	let projectItemBackgroundEl: HTMLElement;
+	let projectItemContentEl: HTMLElement;
+	let projectItemImageEl: HTMLElement;
+
+	onMount(() => {
+		gsap.from(projectItemBackgroundEl, {
+			scale: 0.0,
+			ease: 'power1.out',
+			duration: 0.6,
+			scrollTrigger: {
+				trigger: projectItemEl,
+				start: 'top bottom',
+			}
+		});
+
+		gsap.from(projectItemContentEl, {
+			opacity: 0,
+			y: 50,
+			ease: 'power1.out',
+			delay: 0.6,
+			scrollTrigger: {
+				trigger: projectItemEl,
+				start: 'top bottom'
+			}
+		});
+
+		gsap.from(projectItemImageEl, {
+			opacity: 0,
+			ease: 'power1.out',
+			delay: 0.6,
+			scrollTrigger: {
+				trigger: projectItemEl,
+				start: 'top bottom'
+			}
+		});
+	});
 </script>
 
 <div
 	class="project-item"
+	bind:this={projectItemEl}
 	style={`--_color: ${color}; --_bgcolor: ${bgcolor}; grid-column: ${gridColumn}; grid-row: ${gridRow}`}
-	use:inViewport={() => (showProject = true)}
 >
-	<div class="project-item__background scaleIn" class:animate={showProject}></div>
-	<div class="project-item__content fadeIn" class:animate={showProject}>
+	<div class="project-item__background" bind:this={projectItemBackgroundEl}></div>
+	<div class="project-item__content" bind:this={projectItemContentEl}>
 		<div class="project-item__text">
 			<h3 class="project-item__header">{title}</h3>
 			<div class="project-item__badges">
@@ -38,7 +79,7 @@
 			{/if}
 		</div>
 	</div>
-	<div class="project-item__image clipIn" class:animate={showProject}>
+	<div class="project-item__image" bind:this={projectItemImageEl}>
 		<ProjectItemImage {image} />
 	</div>
 </div>
@@ -61,7 +102,6 @@
 			inset: 0;
 			z-index: -1;
 			border-radius: 16px;
-			transition: 400ms;
 			.project-item:hover & {
 				transform: scalex(1.04) scaleY(1.04);
 			}

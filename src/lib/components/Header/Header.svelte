@@ -1,25 +1,48 @@
 <script lang="ts">
 	import HeaderBackground from './HeaderBackground.svelte';
-	import HeaderEllipse from './HeaderEllipse.svelte';
 	import headerArrow from '../../../assets/icons/arrow-header.svg';
+	import { gsap } from 'gsap';
+	import { onMount } from 'svelte';
 
-	export let startAnimation: boolean;
+	onMount(() => {
+		gsap.from('.hero-text__content', {
+			opacity: 0,
+			y: '100%',
+			duration: 1,
+			ease: 'power3.inOut',
+			stagger: {
+				each: 0.1,
+				ease: 'power4.out'
+			}
+		});
+
+		gsap.from('.header__scroll-down', {
+			opacity: 0,
+			y: '-100%',
+			duration: 0.6,
+			delay: 0.8
+		});
+
+		gsap.to('.header__scroll-down img', {
+			y: 10,
+			duration: 1,
+			repeat: -1,
+			yoyo: true
+		});
+	});
 </script>
 
 <div class="header">
-	<!-- <HeaderBackground /> -->
+	<HeaderBackground />
 	<div class="header__hero">
-		<HeaderEllipse {startAnimation} />
 		<div class="hero-text">
-			<span class="rotateIn" class:animate={startAnimation}
-				>Webdesign <span class="clr-primary">&</span></span
-			>
+			<span class="hero-text__content">Webdesign <span class="clr-primary">&</span></span>
 		</div>
 		<div class="hero-text">
-			<span class="rotateIn" class:animate={startAnimation}>Entwicklung</span>
+			<span class="hero-text__content">Entwicklung</span>
 		</div>
 	</div>
-	<div class="header__scroll-down fadeIn" class:animate={startAnimation}>
+	<div class="header__scroll-down">
 		<img src={headerArrow} height="40" alt="Scroll Down" />
 	</div>
 </div>
@@ -33,7 +56,6 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		overflow: hidden;
 		&__hero {
 			width: 100%;
 			max-width: 800px;
@@ -42,12 +64,10 @@
 			justify-content: center;
 			position: relative;
 			z-index: 2;
-			pointer-events: none;
 		}
 		&__scroll-down {
 			position: absolute;
 			bottom: 15px;
-			animation-delay: 1s;
 		}
 	}
 	.hero-text {
@@ -55,14 +75,12 @@
 		line-height: 1;
 		font-weight: 800;
 		overflow: hidden;
-		.rotateIn {
+		padding: 5px 0;
+		&__content {
 			display: inline-block;
 		}
 		&:last-child {
 			text-align: right;
-			.rotateIn {
-				animation-delay: 0.2s;
-			}
 		}
 	}
 </style>

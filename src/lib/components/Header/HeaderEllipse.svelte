@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { draw } from 'svelte/transition';
-	export let startAnimation: boolean;
+	export let showHeader: boolean;
 
 	let mouseX = 0;
 	let mouseY = 0;
@@ -30,7 +30,7 @@
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg"
 	>
-		{#if startAnimation}
+		{#if showHeader}
 			<g filter="url(#filter0_d_63_87)">
 				<path
 					transition:draw={{ delay: 600 }}

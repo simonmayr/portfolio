@@ -1,13 +1,26 @@
 <script lang="ts">
-	import Fa from 'svelte-fa';
-	import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-
 	import NavigationBurger from './NavigationBurger.svelte';
+	import Fa from 'svelte-fa';
 
-	export let startAnimation: boolean;
+	import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+	import { gsap } from 'gsap';
+	import { onMount } from 'svelte';
+
+	export const animate = () => {
+		gsap.from('.navigation', {
+			opacity: 0,
+			y: -50,
+			duration: 1,
+			ease: 'power3.inOut'
+		});
+	};
+
+	onMount(() => {
+		animate();
+	});
 </script>
 
-<div class="navigation fadeIn" class:animate={startAnimation}>
+<div class="navigation">
 	<div class="container">
 		<div class="navigation__wrapper">
 			<div class="navigation__burger">
@@ -15,8 +28,8 @@
 			</div>
 			<div class="navigation__logo">simon<span>.</span></div>
 			<div class="navigation__social">
-				<Fa icon={faInstagram} scale={1.4} />
-				<Fa icon={faLinkedinIn} scale={1.4} />
+				<Fa icon={faInstagram} />
+				<Fa icon={faLinkedinIn} />
 			</div>
 		</div>
 	</div>
@@ -28,7 +41,6 @@
 		inset: 0 0 auto 0;
 		z-index: 10;
 		padding: 30px 0;
-		animation-delay: 1s;
 		&__wrapper {
 			display: grid;
 			align-items: center;

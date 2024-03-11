@@ -1,17 +1,7 @@
 <script lang="ts">
 	import Navigation from '../lib/components/Navigation/Navigation.svelte';
 	import '../assets/styles/app.scss';
-	import { onMount } from 'svelte';
 	import { onNavigate } from '$app/navigation';
-
-	let startAnimation = false;
-
-	onMount(() => {
-		// hideLoading = true;
-		setTimeout(() => {
-			startAnimation = true;
-		}, 200);
-	});
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -28,9 +18,9 @@
 </script>
 
 <div class="app-layout">
-	<Navigation {startAnimation} />
+	<Navigation />
 	<div class="app-content">
-		<slot {startAnimation} />
+		<slot />
 	</div>
 </div>
 
@@ -51,27 +41,23 @@
 		}
 	}
 
-	@keyframes slide-from-right {
+	@keyframes slide-from-bottom {
 		from {
-			transform: translateX(30px);
+			transform: translateY(100%);
 		}
 	}
 
-	@keyframes slide-to-left {
+	@keyframes slide-to-back {
 		to {
-			transform: translateX(-30px);
+			transform: translateY(-100px) scale(0.9);
 		}
 	}
 
 	:root::view-transition-old(root) {
-		animation:
-			90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
-			300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+		animation: 1s cubic-bezier(0.4, 0, 0.2, 1) both slide-to-back;
 	}
 
 	:root::view-transition-new(root) {
-		animation:
-			210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-			300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+		animation: 1s cubic-bezier(0.4, 0, 0.2, 1) 100ms both slide-from-bottom;
 	}
 </style>
