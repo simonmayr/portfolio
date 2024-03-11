@@ -5,7 +5,6 @@
 	import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
-	import Button from '../UI/Button.svelte';
 
 	onMount(() => {
 		gsap.from('.navigation', {

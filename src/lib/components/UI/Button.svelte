@@ -4,6 +4,7 @@
 
 	export let size: 'small' | 'medium' | 'large' = 'medium';
 	export let color: 'primary' | 'black' = 'primary';
+	export let type: 'normal' | 'nav' = 'normal';
 
 	let buttonEl: HTMLElement;
 	let buttonFlairEl: HTMLElement;
@@ -19,16 +20,14 @@
 			console.log(e.clientX, e.clientY);
 
 			xTo(e.clientX - buttonEl.getBoundingClientRect().left);
-			yTo(
-				e.clientY - buttonEl.getBoundingClientRect().top + buttonEl.getBoundingClientRect().height
-			);
+			yTo(e.clientY - buttonEl.getBoundingClientRect().top);
 		};
 
 		buttonEl.addEventListener('mousemove', handleHover);
 	});
 
 	const handleMouseEnter = () => {
-		gsap.to(buttonFlairEl, { scale: 2, duration: 0.8, ease: 'power3' });
+		gsap.to(buttonFlairEl, { scale: 2.2, duration: 0.8, ease: 'power3' });
 	};
 
 	const handleMouseLeave = () => {
@@ -43,8 +42,10 @@
 	class:button--large={size === 'large'}
 	class:button--primary={color === 'primary'}
 	class:button--black={color === 'black'}
+	class:button--nav={type === 'nav'}
 	on:mouseenter={handleMouseEnter}
 	on:mouseleave={handleMouseLeave}
+	on:click
 	bind:this={buttonEl}
 >
 	<slot />
@@ -94,6 +95,20 @@
 			.button-flair {
 				background-color: black;
 			}
+		}
+		&--nav {
+			--_size: 25px;
+			cursor: pointer;
+			position: relative;
+			width: var(--_size);
+			height: var(--_size);
+			border: 2px solid var(--clr-primary);
+			border-radius: 100%;
+			background-color: transparent;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
 		}
 		&-flair {
 			width: 100%;
