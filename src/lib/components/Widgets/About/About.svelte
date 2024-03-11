@@ -28,7 +28,7 @@
 <section class="about">
 	<div class="container">
 		<div class="about__content">
-			<h2 class="about__headline headline">simon mayr</h2>
+			<h2 class="about__headline headline">über mich</h2>
 			<div class="about__text">
 				{#each aboutText.split(' ') as word, t}
 					<span class="overflow-hidden">

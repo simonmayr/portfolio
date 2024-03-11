@@ -1,8 +1,8 @@
-<div class="test blur"></div>
-<div class="test2 blur"></div>
+<div class="line blur"></div>
+<div class="line2 blur"></div>
 
 <style lang="scss">
-	.test {
+	.line {
 		height: 100px;
 		width: 100vw;
 		position: absolute;
@@ -12,7 +12,7 @@
 		background: conic-gradient(from 2.35rad, #7bb8b9, #050aa5);
 	}
 
-	.test2 {
+	.line2 {
 		height: 100px;
 		width: 100vw;
 		position: absolute;
@@ -21,6 +21,7 @@
 		rotate: -15deg;
 		background: conic-gradient(from 4.5rad, #5ee2ff, #3805a5);
 	}
+
 	.blur {
 		filter: blur(10rem);
 	}

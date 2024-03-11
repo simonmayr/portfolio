@@ -25,19 +25,20 @@
 	onMount(() => {
 		gsap.from(projectItemBackgroundEl, {
 			scale: 0.0,
-			ease: 'power1.out',
-			duration: 0.6,
+			borderRadius: '100%',
+			ease: 'power3.inOut',
+			duration: 1,
 			scrollTrigger: {
 				trigger: projectItemEl,
-				start: 'top bottom',
+				start: 'top bottom'
 			}
 		});
 
 		gsap.from(projectItemContentEl, {
 			opacity: 0,
 			y: 50,
-			ease: 'power1.out',
-			delay: 0.6,
+			ease: 'power3.inOut',
+			delay: 1,
 			scrollTrigger: {
 				trigger: projectItemEl,
 				start: 'top bottom'
@@ -46,8 +47,8 @@
 
 		gsap.from(projectItemImageEl, {
 			opacity: 0,
-			ease: 'power1.out',
-			delay: 0.6,
+			ease: 'power3.inOut',
+			delay: 1,
 			scrollTrigger: {
 				trigger: projectItemEl,
 				start: 'top bottom'
@@ -102,9 +103,6 @@
 			inset: 0;
 			z-index: -1;
 			border-radius: 16px;
-			.project-item:hover & {
-				transform: scalex(1.04) scaleY(1.04);
-			}
 		}
 		&__header {
 			font-size: var(--fs-h3);
@@ -117,13 +115,9 @@
 			border-top-right-radius: 12px;
 			flex: 1;
 			overflow: hidden;
-			filter: brightness(0.8);
+			filter: brightness(0.7);
 			animation-delay: 0.6s;
 			transition: 400ms;
-			.project-item:hover & {
-				border-bottom-left-radius: 12px;
-				border-bottom-right-radius: 12px;
-			}
 		}
 		&__content {
 			display: flex;
@@ -141,7 +135,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: 10px;
+			padding: 12px;
 			border-radius: 100px;
 			transition: 400ms;
 			margin-top: 4px;

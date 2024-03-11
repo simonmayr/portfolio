@@ -56,7 +56,7 @@
   `;
 
 	onMount(() => {
-		const _size = [2048, 1638];
+		const _size = [canvas.getBoundingClientRect().width, canvas.getBoundingClientRect().height];
 		const renderer = new Renderer({ dpr: 2 });
 		const gl = renderer.gl;
 

@@ -28,8 +28,8 @@
 			</div>
 			<div class="navigation__logo">simon<span>.</span></div>
 			<div class="navigation__social">
-				<Fa icon={faInstagram} />
-				<Fa icon={faLinkedinIn} />
+				<Fa icon={faInstagram} scale={1.4} />
+				<Fa icon={faLinkedinIn} scale={1.4} />
 			</div>
 		</div>
 	</div>
