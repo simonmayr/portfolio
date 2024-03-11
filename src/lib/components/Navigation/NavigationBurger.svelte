@@ -1,15 +1,43 @@
-<script>
+<script lang="ts">
+	import { gsap } from 'gsap';
+	import { onMount } from 'svelte';
+
 	let navOpen = false;
+
+	let buttonEl: HTMLElement;
+	let buttonFlairEl: HTMLElement;
 
 	$: if (!import.meta.env.SSR) {
 		document.body.style.overflow = navOpen ? 'hidden' : 'auto';
 	}
+
+	onMount(() => {
+		gsap.set(buttonFlairEl, { xPercent: -50, yPercent: -50, scale: 0 });
+
+		let xTo = gsap.quickSetter(buttonFlairEl, 'x', 'px'),
+			yTo = gsap.quickSetter(buttonFlairEl, 'y', 'px');
+
+		const handleHover = (e: MouseEvent) => {
+			xTo(e.clientX - buttonEl.getBoundingClientRect().left);
+			yTo(e.clientY - buttonEl.getBoundingClientRect().top);
+		};
+
+		buttonEl.addEventListener('mousemove', handleHover);
+	});
 </script>
 
 <svelte:window on:keydown={(e) => e.key === 'Escape' && (navOpen = false)} />
 
 <div class="navigation-burger" class:navOpen>
-	<button class="navigation-burger__circle" on:click={() => (navOpen = !navOpen)}> </button>
+	<button
+		class="navigation-burger__circle"
+		bind:this={buttonEl}
+		on:mouseenter={() => gsap.to(buttonFlairEl, { scale: 2.5, duration: 0.6, ease: 'power3' })}
+		on:mouseleave={() => gsap.to(buttonFlairEl, { scale: 0, duration: 0.6, ease: 'power3' })}
+		on:click={() => (navOpen = !navOpen)}
+	>
+		<span class="button-flair" bind:this={buttonFlairEl}></span>
+	</button>
 	<div class="navigation-backdrop"></div>
 	<div class="navigation-content">
 		<div class="container">
@@ -20,6 +48,13 @@
 </div>
 
 <style lang="scss">
+	.button-flair {
+		height: 100%;
+		width: 100%;
+		border-radius: 100%;
+		background-color: var(--clr-primary);
+		position: absolute;
+	}
 	.navigation-backdrop {
 		position: absolute;
 		width: 400vh;
@@ -52,20 +87,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			&:hover::before {
-				scale: 1;
-			}
-			&::before {
-				content: '';
-				position: absolute;
-				scale: 0;
-				width: var(--_size);
-				height: var(--_size);
-				background-color: var(--clr-primary);
-				transition: 0.2s;
-				transform-origin: center;
-				border-radius: 100%;
-			}
+			overflow: hidden;
 			&::after {
 				content: 'Menü';
 				position: absolute;

@@ -5,18 +5,15 @@
 	import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
+	import Button from '../UI/Button.svelte';
 
-	export const animate = () => {
+	onMount(() => {
 		gsap.from('.navigation', {
 			opacity: 0,
 			y: -50,
 			duration: 1,
 			ease: 'power3.inOut'
 		});
-	};
-
-	onMount(() => {
-		animate();
 	});
 </script>
 
@@ -58,6 +55,7 @@
 			display: flex;
 			gap: 25px;
 			justify-content: flex-end;
+			align-items: center;
 		}
 	}
 </style>

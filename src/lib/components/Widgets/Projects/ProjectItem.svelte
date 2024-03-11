@@ -5,6 +5,7 @@
 
 	import arrow from '../../../../assets/icons/arrow.svg';
 	import ProjectItemImage from './ProjectItemImage.svelte';
+	import Button from '$lib/components/UI/Button.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -68,7 +69,7 @@
 			<h3 class="project-item__header">{title}</h3>
 			<div class="project-item__badges">
 				{#each badges as badge}
-					<span class="project-item-badge">{badge}</span>
+					<Button color="black" size="small">{badge}</Button>
 				{/each}
 			</div>
 		</div>
