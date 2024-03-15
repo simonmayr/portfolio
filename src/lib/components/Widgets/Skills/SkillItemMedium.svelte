@@ -39,13 +39,12 @@
 			padding: 30px;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
 			background-color: #00020a;
 			border-radius: 12px;
 			flex: 1;
 		}
 		&__headline {
-			font-size: 2.4rem;
+			font-size: var(--fs-h3);
 			margin-top: 0;
 			margin-bottom: 5px;
 			background: linear-gradient(180deg, var(--clr-primary) 0%, #ffffff 100%);

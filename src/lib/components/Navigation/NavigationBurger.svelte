@@ -12,6 +12,7 @@
 
 <div class="navigation-burger" class:navOpen>
 	<Button size={'small'} type={'nav'} on:click={() => (navOpen = !navOpen)} />
+	<span>Menü</span>
 	<div class="navigation-backdrop"></div>
 	<div class="navigation-content">
 		<div class="container">
@@ -41,6 +42,9 @@
 	.navigation-burger {
 		position: relative;
 		width: fit-content;
+		display: flex;
+		align-items: center;
+		gap: 15px;
 	}
 	.navigation-content {
 		position: absolute;

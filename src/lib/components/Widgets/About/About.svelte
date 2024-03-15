@@ -14,7 +14,7 @@
 				trigger: '.about__text',
 				start: 'top 90%',
 				end: 'bottom 60%',
-				scrub: 1,
+				scrub: 1
 			},
 			stagger: {
 				each: 0.03,
@@ -47,14 +47,24 @@
 			font-size: 2rem;
 			line-height: 1.5;
 			font-weight: 300;
+			@media (max-width: 992px) {
+				font-size: 1.1rem;
+			}
 		}
 		&__headline {
 			position: absolute;
 			top: -14px;
+			@media (max-width: 992px) {
+				position: static;
+				margin-bottom: 0px;
+			}
 		}
 		&__text {
 			> span:first-child {
 				margin-left: 290px;
+				@media (max-width: 992px) {
+					margin-left: 0;
+				}
 			}
 		}
 	}

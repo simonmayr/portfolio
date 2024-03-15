@@ -16,7 +16,7 @@
 			ease: 'power3.inOut',
 			scrollTrigger: {
 				trigger: itemEl,
-				start: 'top 90%',
+				start: 'top 90%'
 			}
 		});
 	});
@@ -40,6 +40,9 @@
 		display: flex;
 		align-items: center;
 		gap: 20px;
+		@media (max-width: 576px) {
+			padding: 15px;
+		}
 		&__image {
 			width: 30%;
 			img {
@@ -55,7 +58,7 @@
 		}
 		&__headline {
 			color: #fff;
-			font-size: 1.5rem;
+			font-size: var(--fs-h4);
 			margin-top: 0;
 			margin-bottom: 3px;
 		}

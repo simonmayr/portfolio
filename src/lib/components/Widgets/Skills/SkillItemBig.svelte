@@ -3,7 +3,6 @@
 	import { onMount } from 'svelte';
 
 	// export let image: string;
-	export let teaser: string;
 	export let headline: string;
 	export let text: string;
 
@@ -25,7 +24,6 @@
 
 <div class="skill-item-big" bind:this={itemEl}>
 	<div class="skill-item-big__wrapper">
-		<div class="skill-item-big__teaser">{teaser}</div>
 		<div class="skill-item-big__content">
 			<h3 class="skill-item-big__headline">{headline}</h3>
 			<p class="skill-item-big__text">{text}</p>
@@ -55,14 +53,14 @@
 			position: relative;
 			overflow: hidden;
 		}
-		&__teaser {
-			font-weight: bold;
-		}
 		&__content {
 			width: 60%;
+			@media (max-width: 576px) {
+				width: 100%;
+			}
 		}
 		&__headline {
-			font-size: 2.4rem;
+			font-size: var(--fs-h3);
 			margin-top: 0;
 			margin-bottom: 5px;
 			background: linear-gradient(180deg, var(--clr-primary) 0%, #ffffff 100%);

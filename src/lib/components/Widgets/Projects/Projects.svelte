@@ -52,6 +52,13 @@
 			grid-template-columns: repeat(25, 1fr);
 			grid-auto-rows: 100px;
 			margin-top: 50px;
+			@media (max-width: 992px) {
+				display: flex;
+				flex-direction: column;
+			}
+			@media (max-width: 768px) {
+				margin-top: 10px;
+			}
 		}
 	}
 </style>

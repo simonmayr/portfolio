@@ -1,7 +1,11 @@
 <script lang="ts">
 	import Navigation from '../lib/components/Navigation/Navigation.svelte';
-	import '../assets/styles/app.scss';
 	import { onNavigate } from '$app/navigation';
+	import '../assets/styles/app.scss';
+	import PageLoading from '$lib/components/Loading/PageLoading.svelte';
+	import { setContext } from 'svelte';
+
+	setContext<number>('loadingDuration', 0.8);
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -18,6 +22,7 @@
 </script>
 
 <div class="app-layout">
+	<PageLoading />
 	<Navigation />
 	<div class="app-content">
 		<slot />

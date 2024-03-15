@@ -16,7 +16,6 @@
 		<h2 class="skills__headline headline">skills</h2>
 		<div class="skills__grid">
 			<SkillItemBig
-				teaser="Webentwicklung"
 				headline="Typo3 Webseiten"
 				text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam."
 			/>
@@ -36,7 +35,6 @@
 				text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr"
 			/>
 			<SkillItemBig
-				teaser="Software"
 				headline="Individualsoftware"
 				text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam."
 			/>
@@ -84,8 +82,11 @@
 					}
 				}
 			}
+			@media (max-width: 768px) {
+				margin-top: 10px;
+			}
 			@media (max-width: 576px) {
-				grid-template-columns: repeat(1, 1fr);
+				grid-template-columns: repeat(1, 100%);
 			}
 		}
 	}

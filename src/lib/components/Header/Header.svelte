@@ -2,8 +2,9 @@
 	import HeaderBackground from './HeaderBackground.svelte';
 	import headerArrow from '../../../assets/icons/arrow-header.svg';
 	import { gsap } from 'gsap';
-	import { onMount } from 'svelte';
-	import Button from '../UI/Button.svelte';
+	import { getContext, onMount } from 'svelte';
+
+	let loadingDuration = getContext<number>('loadingDuration');
 
 	onMount(() => {
 		gsap.from('.hero-text__content', {
@@ -11,6 +12,7 @@
 			y: '100%',
 			duration: 1,
 			ease: 'power3.inOut',
+			delay: loadingDuration + 0.6,
 			stagger: {
 				each: 0.1,
 				ease: 'power4.out'
@@ -20,8 +22,8 @@
 		gsap.from('.header__scroll-down', {
 			opacity: 0,
 			y: '-100%',
-			duration: 0.6,
-			delay: 0.8
+			duration: 2,
+			delay: loadingDuration + 1.2
 		});
 
 		gsap.to('.header__scroll-down img', {
@@ -50,7 +52,8 @@
 
 <style lang="scss">
 	.header {
-		height: calc(100dvh);
+		height: 100dvh;
+		min-height: 500px;
 		width: 100vw;
 		position: relative;
 		display: flex;
@@ -80,6 +83,11 @@
 		font-weight: 800;
 		overflow: hidden;
 		padding: 5px 0;
+		@media (max-width: 576px) {
+			padding: 0 15px;
+			font-size: 13vw;
+			margin-bottom: 10px;
+		}
 		&__content {
 			display: inline-block;
 		}
