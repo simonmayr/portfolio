@@ -10,28 +10,33 @@
 	let buttonFlairEl: HTMLElement;
 
 	onMount(() => {
-		gsap.set(buttonFlairEl, { xPercent: -50, yPercent: -50, scale: 0 });
+		gsap.set(buttonFlairEl, { scale: 0 });
 
 		let xTo = gsap.quickSetter(buttonFlairEl, 'x', 'px');
 		let yTo = gsap.quickSetter(buttonFlairEl, 'y', 'px');
 
 		const handleHover = (e: MouseEvent) => {
-			console.log(buttonEl.getBoundingClientRect());
-			console.log(e.clientX, e.clientY);
-
-			xTo(e.clientX - buttonEl.getBoundingClientRect().left);
-			yTo(e.clientY - buttonEl.getBoundingClientRect().top);
+			xTo(
+				e.clientX -
+					buttonEl.getBoundingClientRect().left -
+					buttonEl.getBoundingClientRect().width / 2
+			);
+			yTo(
+				e.clientY -
+					buttonEl.getBoundingClientRect().top -
+					buttonEl.getBoundingClientRect().height / 2
+			);
 		};
 
 		buttonEl.addEventListener('mousemove', handleHover);
 	});
 
 	const handleMouseEnter = () => {
-		gsap.to(buttonFlairEl, { scale: 2.2, duration: 0.8, ease: 'power3' });
+		gsap.to(buttonFlairEl, { scale: 2.2, duration: 0.2, ease: 'power1.out' });
 	};
 
 	const handleMouseLeave = () => {
-		gsap.to(buttonFlairEl, { scale: 0, duration: 0.8, ease: 'power3' });
+		gsap.to(buttonFlairEl, { scale: 0, duration: 0.2, ease: 'power1.out' });
 	};
 </script>
 
@@ -61,36 +66,44 @@
 		border: 2px solid var(--clr-primary);
 		color: white;
 		background-color: transparent;
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
 		padding: 10px 20px;
 		isolation: isolate;
 		transition: 0.6s;
+		width: fit-content;
 		&--small {
 			font-size: 0.8rem;
 			padding: 2px 10px;
 			border-width: 1px;
 		}
 		&--medium {
-			font-size: 1.6rem;
-			padding: 10px 20px;
+			font-size: 1rem;
+			padding: 10px 25px;
 		}
 		&--large {
 			font-size: 2rem;
 			padding: 15px 30px;
 		}
 		&--primary {
-			background-color: var(--clr-primary);
+			background-color: transparent;
 			border-color: var(--clr-primary);
+			transition: none;
+			&:hover {
+				transition: background-color 0.2s 0.2s;
+				background-color: var(--clr-primary);
+			}
 		}
 		&--black {
 			background-color: transparent;
-			border-color: var(--clr-black);
+			border-color: black;
 			color: black;
+			transition: 0.2s;
 			&:hover {
 				color: white;
+				border-color: black;
 			}
 			.button-flair {
 				background-color: black;

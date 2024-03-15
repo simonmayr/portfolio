@@ -3,6 +3,7 @@
 	import headerArrow from '../../../assets/icons/arrow-header.svg';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
+	import Button from '../UI/Button.svelte';
 
 	onMount(() => {
 		gsap.from('.hero-text__content', {

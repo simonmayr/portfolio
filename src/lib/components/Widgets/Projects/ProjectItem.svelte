@@ -26,12 +26,12 @@
 	onMount(() => {
 		gsap.from(projectItemBackgroundEl, {
 			scale: 0.0,
-			borderRadius: '100%',
+			borderRadius: '500px',
 			ease: 'power3.inOut',
 			duration: 1,
 			scrollTrigger: {
 				trigger: projectItemEl,
-				start: 'top bottom'
+				start: 'top 90%'
 			}
 		});
 
@@ -42,7 +42,7 @@
 			delay: 1,
 			scrollTrigger: {
 				trigger: projectItemEl,
-				start: 'top bottom'
+				start: 'top 90%'
 			}
 		});
 
@@ -52,7 +52,7 @@
 			delay: 1,
 			scrollTrigger: {
 				trigger: projectItemEl,
-				start: 'top bottom'
+				start: 'top 90%'
 			}
 		});
 	});
@@ -98,12 +98,17 @@
 		transition: 400ms;
 		position: relative;
 		isolation: isolate;
+		border-radius: 16px;
+		overflow: hidden;
 		&__background {
 			background-color: var(--_bgcolor);
 			position: absolute;
-			inset: 0;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			height: 100%;
+			aspect-ratio: 1/1;
 			z-index: -1;
-			border-radius: 16px;
 		}
 		&__header {
 			font-size: var(--fs-h3);
@@ -143,12 +148,6 @@
 			&:hover {
 				scale: 1.09;
 			}
-		}
-		&-badge {
-			border: 1px solid var(--_color);
-			border-radius: 100px;
-			padding: 2px 10px;
-			font-size: 0.8rem;
 		}
 	}
 </style>

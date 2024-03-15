@@ -44,6 +44,7 @@
 
 <style lang="scss">
 	.projects {
+		padding-block: 75px;
 		position: relative;
 		&__wrapper {
 			width: 100%;

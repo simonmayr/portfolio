@@ -14,7 +14,6 @@
 				trigger: '.about__text',
 				start: 'top 90%',
 				end: 'bottom 60%',
-				// markers: true,
 				scrub: 1,
 			},
 			stagger: {
@@ -42,7 +41,7 @@
 
 <style lang="scss">
 	.about {
-		padding: 150px 0;
+		padding-block: 150px 75px;
 		&__content {
 			position: relative;
 			font-size: 2rem;
