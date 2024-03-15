@@ -65,6 +65,9 @@
 			justify-content: center;
 			position: relative;
 			z-index: 2;
+			@media (max-width: 992px) {
+				max-width: 480px;
+			}
 		}
 		&__scroll-down {
 			position: absolute;

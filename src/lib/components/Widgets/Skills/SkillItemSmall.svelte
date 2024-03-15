@@ -34,7 +34,7 @@
 
 <style lang="scss">
 	.skill-item-small {
-		background-color: #040717;
+		background-color: #00020a;
 		border-radius: 12px;
 		padding: 30px;
 		display: flex;

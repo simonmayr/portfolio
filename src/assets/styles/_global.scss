@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	// outline: 1px solid red;
+}
+
 .headline {
 	font-size: var(--fs-h2);
 	font-weight: 700;

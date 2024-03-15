@@ -76,6 +76,17 @@
 			grid-auto-rows: 170px;
 			gap: 10px;
 			margin-top: 50px;
+			@media (max-width: 992px) {
+				grid-template-columns: repeat(2, 1fr);
+				:global(*) {
+					&:nth-child(4) {
+						order: 1;
+					}
+				}
+			}
+			@media (max-width: 576px) {
+				grid-template-columns: repeat(1, 1fr);
+			}
 		}
 	}
 </style>

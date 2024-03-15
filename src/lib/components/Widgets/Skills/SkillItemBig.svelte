@@ -17,7 +17,7 @@
 			ease: 'power3.inOut',
 			scrollTrigger: {
 				trigger: itemEl,
-				start: 'top 90%',
+				start: 'top 90%'
 			}
 		});
 	});
@@ -41,6 +41,9 @@
 		padding: 3px;
 		background: linear-gradient(106deg, var(--clr-primary) 0%, #ffffff 100%);
 		display: flex;
+		@media (max-width: 576px) {
+			grid-column: span 1;
+		}
 		&__wrapper {
 			padding: 30px;
 			display: flex;
