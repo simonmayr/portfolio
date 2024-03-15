@@ -48,7 +48,7 @@
 			line-height: 1.5;
 			font-weight: 300;
 			@media (max-width: 992px) {
-				font-size: 1.1rem;
+				font-size: 1.4rem;
 			}
 		}
 		&__headline {
