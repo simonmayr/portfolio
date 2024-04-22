@@ -1,24 +1,15 @@
 <script lang="ts">
-	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
+	import { animateSkill } from './skill-animation';
 
-	export let image: string;
+	export let image: string | null = null;
 	export let headline: string;
 	export let text: string;
 
 	let itemEl: HTMLElement;
 
 	onMount(() => {
-		gsap.from(itemEl, {
-			opacity: 0,
-			scale: 0.5,
-			duration: 1,
-			ease: 'power3.inOut',
-			scrollTrigger: {
-				trigger: itemEl,
-				start: 'top 90%'
-			}
-		});
+		animateSkill(itemEl);
 	});
 </script>
 
@@ -27,7 +18,9 @@
 		<h3 class="skill-item-medium__headline">{headline}</h3>
 		<p class="skill-item-medium__text">{text}</p>
 	</div>
-	<img src={image} class="skill-item-medium__image" alt={headline} />
+	{#if image}
+		<img src={image} class="skill-item-medium__image" alt={headline} />
+	{/if}
 </div>
 
 <style lang="scss">
@@ -43,6 +36,7 @@
 			display: flex;
 			flex-direction: column;
 			background-color: #00020a;
+			background-image: var(--noise);
 			border-radius: 12px;
 			flex: 1;
 		}

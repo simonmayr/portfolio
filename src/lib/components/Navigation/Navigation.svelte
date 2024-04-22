@@ -93,7 +93,7 @@
 		}
 		&__social {
 			display: flex;
-			gap: 25px;
+			gap: 30px;
 			justify-content: flex-end;
 			align-items: center;
 			padding-right: 5px;

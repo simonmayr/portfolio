@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
+	import { animateSkill } from './skill-animation';
 
 	export let image: string;
 	export let headline: string;
@@ -9,16 +9,7 @@
 	let itemEl: HTMLElement;
 
 	onMount(() => {
-		gsap.from(itemEl, {
-			opacity: 0,
-			scale: 0.5,
-			duration: 1,
-			ease: 'power3.inOut',
-			scrollTrigger: {
-				trigger: itemEl,
-				start: 'top 90%'
-			}
-		});
+		animateSkill(itemEl);
 	});
 </script>
 
@@ -49,6 +40,7 @@
 			flex-direction: column;
 			justify-content: space-between;
 			background-color: #00020a;
+			background-image: var(--noise);
 			border-radius: 12px;
 			flex: 1;
 			position: relative;
