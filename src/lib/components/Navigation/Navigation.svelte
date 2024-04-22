@@ -14,7 +14,7 @@
 	};
 
 	onMount(() => {
-		gsap.from('.navigation__wrapper', {
+		gsap.from('.navigation .container', {
 			opacity: 0,
 			y: -50,
 			duration: 1,
@@ -53,15 +53,31 @@
 			padding: 15px 0;
 		}
 		&.scrolled {
-			padding: 5px 0;
-			backdrop-filter: blur(10px);
+			padding: 15px 0;
 		}
 		&__wrapper {
 			display: grid;
 			align-items: center;
 			grid-template-columns: repeat(3, 1fr);
+			padding: 0 15px;
+			transition: 0.2s;
 			@media (max-width: 576px) {
 				grid-template-columns: repeat(2, 1fr);
+			}
+			.scrolled & {
+				backdrop-filter: blur(10px);
+				inset: 10px 10px auto 10px;
+				border-radius: 12px;
+				background-color: rgba(255, 255, 255, 0.05);
+				box-shadow:
+					inset 0.25px 1px 0 0 rgb(254 205 211/3%),
+					0px 0.3px 0.3px rgba(255, 255, 255, 0.01),
+					0px 2.2px 2.5px -0.4px rgba(255, 255, 255, 0.01),
+					0px 4.3px 4.8px -0.8px rgba(255, 255, 255, 0.01),
+					0px 7.5px 8.4px -1.2px rgba(255, 255, 255, 0.01),
+					0px 12.8px 14.4px -1.7px rgba(255, 255, 255, 0.01),
+					0px 21px 23.6px -2.1px rgba(255, 255, 255, 0.01),
+					0px 33.2px 37.4px -2.5px rgba(255, 255, 255, 0.01);
 			}
 		}
 		&__logo {
@@ -80,6 +96,7 @@
 			gap: 25px;
 			justify-content: flex-end;
 			align-items: center;
+			padding-right: 5px;
 			@media (max-width: 576px) {
 				display: none;
 			}

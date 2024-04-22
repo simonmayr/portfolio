@@ -2,7 +2,7 @@
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 
-	// export let image: string;
+	export let image: string;
 	export let headline: string;
 	export let text: string;
 
@@ -28,6 +28,7 @@
 			<h3 class="skill-item-big__headline">{headline}</h3>
 			<p class="skill-item-big__text">{text}</p>
 		</div>
+		<img src={image} class="skill-item-big__image" alt={headline} />
 	</div>
 </div>
 
@@ -36,7 +37,7 @@
 		border-radius: 12px;
 		grid-column: span 2;
 		grid-row: span 2;
-		padding: 3px;
+		padding: 1px;
 		background: linear-gradient(106deg, var(--clr-primary) 0%, #ffffff 100%);
 		display: flex;
 		@media (max-width: 576px) {
@@ -70,6 +71,15 @@
 		&__text {
 			opacity: 0.6;
 			margin: 0;
+		}
+		&__image {
+			position: absolute;
+			right: -40px;
+			bottom: -40px;
+			width: 50%;
+			max-width: 330px;
+			opacity: 0.1;
+			pointer-events: none;
 		}
 	}
 </style>

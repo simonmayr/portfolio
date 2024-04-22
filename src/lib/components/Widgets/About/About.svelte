@@ -3,7 +3,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 
-	let aboutText = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. At vero eos et accusam et justo duo dolores et ea rebum. At vero eos et accusam et justo duo dolores et ea rebum.`;
+	let aboutText = `Mein Name ist Simon Mayr, 22 Jahre jung und seit 2016, begeistert für das Entwickeln von Webseiten und Webanwendungen. Nicht nur das Programmieren von Webseiten, sondern auch das Planen und Instandhalten ist für mich eine faszinierende Herausforderung. Ich bin stets motiviert, mich neuen Projekten zu widmen und meine Fähigkeiten weiterzuentwickeln.`;
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +18,6 @@
 			},
 			stagger: {
 				each: 0.03,
-				ease: 'power1.out'
 			}
 		});
 	});
@@ -27,7 +26,7 @@
 <section class="about">
 	<div class="container">
 		<div class="about__content">
-			<h2 class="about__headline headline">über mich</h2>
+			<h2 class="about__headline headline">hallo</h2>
 			<div class="about__text">
 				{#each aboutText.split(' ') as word, t}
 					<span class="overflow-hidden">
@@ -61,7 +60,7 @@
 		}
 		&__text {
 			> span:first-child {
-				margin-left: 290px;
+				margin-left: 160px;
 				@media (max-width: 992px) {
 					margin-left: 0;
 				}
