@@ -1,3 +1,27 @@
+<!-- <script lang="ts">
+	import { gsap } from 'gsap';
+	import { getContext, onMount } from 'svelte';
+
+	let loadingDuration = getContext<number>('loadingDuration');
+
+	onMount(() => {
+		gsap.from('.line--line1', {
+			opacity: 0,
+			height: 0,
+			duration: 2,
+			ease: 'power3.inOut',
+			delay: loadingDuration + 0.6
+		});
+		gsap.from('.line--line2', {
+			opacity: 0,
+			height: 0,
+			duration: 2,
+			ease: 'power3.inOut',
+			delay: loadingDuration + 0.6
+		});
+	});
+</script> -->
+
 <div class="line line--line1 line--blur"></div>
 <div class="line line--line2 line--blur"></div>
 

@@ -15,27 +15,27 @@
 
 <section class="skills">
 	<div class="container">
-		<h2 class="skills__headline headline">skills</h2>
+		<h2 class="skills__headline headline">Skills</h2>
 		<div class="skills__grid">
 			<SkillItemBig
 				image={typo3}
 				headline="Typo3 Webseiten"
-				text="Ein leistungsstarkes Content-Management-System für Webseiten, die nicht nur gut aussehen, sondern auch kinderleicht zu warten sind."
+				text="Die meiste Freude habe ich beim erstellen von Webseiten mit dem Content-Management-System Typo3. Es ist ein Tool das sich für kleine aber auch große Webseiten mit vielen Funktionen eignet."
 			/>
 			<SkillItemSmall
 				image={php}
 				headline="PHP"
-				text="Die serverseitige Programmiersprache für dynamische Webseiten"
+				text=""
 			/>
 			<SkillItemSmall
 				image={js}
 				headline="JavaScript"
-				text="Interaktive Webseiten und Webanwendungen mit JavaScript"
+				text=""
 			/>
 			<SkillItemSmall
 				image={scss}
 				headline="Scss"
-				text="Styling von Webseiten mit Scss und CSS3"
+				text=""
 			/>
 			<SkillItemBig
 				image={svelte}
@@ -45,26 +45,26 @@
 			<SkillItemSmall
 				image={svelte}
 				headline="Svelte"
-				text="Ein modernes Framework für die Entwicklung von Webanwendungen"
+				text=""
 			/>
 			<SkillItemMedium
 				headline="Webdesign"
-				text="Moderne und Benutzerfreundliche Designs für Webseiten mit fokus "
+				text="Ich bin zwar kein Vollzeitdesigner, aber ich habe ein Auge für Ästhetik und kreative visuelle Gestaltung von Benutzeroberflächen."
 			/>
 			<SkillItemSmall
 				image={figma}
 				headline="Figma"
-				text="Design-Tool für Webdesigner und Entwickler"
+				text=""
 			/>
 			<SkillItemMedium
 				image={google}
 				headline="SEO"
-				text="Suchmaschinenoptimierung für eine bessere Platzierungen in den Suchergebnissen"
+				text=""
 			/>
 			<SkillItemSmall
 				image={git}
 				headline="Git"
-				text="Versionsverwaltung für Softwareprojekte"
+				text=""
 			/>
 		</div>
 	</div>

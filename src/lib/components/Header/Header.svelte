@@ -15,7 +15,7 @@
 			delay: loadingDuration + 0.6,
 			stagger: {
 				each: 0.1,
-				ease: 'power4.out'
+				ease: 'linear'
 			}
 		});
 
@@ -39,10 +39,13 @@
 	<HeaderBackground />
 	<div class="header__hero">
 		<div class="hero-text">
-			<span class="hero-text__content">Webdesign <span class="clr-primary">&</span></span>
+			<span class="hero-text__content">Simon Mayr</span>
 		</div>
 		<div class="hero-text">
-			<span class="hero-text__content">Entwicklung</span>
+			<span class="hero-text__content">Webseiten <span class="clr-primary">&</span></span>
+		</div>
+		<div class="hero-text">
+			<span class="hero-text__content">Design</span>
 		</div>
 	</div>
 	<div class="header__scroll-down">
@@ -91,8 +94,12 @@
 		&__content {
 			display: inline-block;
 		}
+		&:first-child {
+			text-align: right;
+		}
 		&:last-child {
 			text-align: right;
+			padding-right: 90px;
 		}
 	}
 </style>

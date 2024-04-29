@@ -16,9 +16,8 @@
 	onMount(() => {
 		gsap.from('.navigation .container', {
 			opacity: 0,
-			y: -50,
 			duration: 1,
-			delay: loadingDuration + 0.6,
+			delay: loadingDuration + 1.2,
 			ease: 'power3.inOut'
 		});
 		handeScroll();

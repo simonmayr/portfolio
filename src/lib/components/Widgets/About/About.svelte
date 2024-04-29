@@ -3,7 +3,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 
-	let aboutText = `Mein Name ist Simon Mayr, 22 Jahre jung und seit 2016, begeistert für das Entwickeln von Webseiten und Webanwendungen. Nicht nur das Programmieren von Webseiten, sondern auch das Planen und Instandhalten ist für mich eine faszinierende Herausforderung. Ich bin stets motiviert, mich neuen Projekten zu widmen und meine Fähigkeiten weiterzuentwickeln.`;
+	let aboutText = `Mein Name ist Simon, ich bin Webentwickler und Designer. `;
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -26,7 +26,7 @@
 <section class="about">
 	<div class="container">
 		<div class="about__content">
-			<h2 class="about__headline headline">hallo</h2>
+			<h2 class="about__headline headline">Hallo</h2>
 			<div class="about__text">
 				{#each aboutText.split(' ') as word, t}
 					<span class="overflow-hidden">

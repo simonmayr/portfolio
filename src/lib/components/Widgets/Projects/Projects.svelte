@@ -7,7 +7,7 @@
 
 <section class="projects">
 	<div class="container">
-		<h2 class="headline">projekte</h2>
+		<h2 class="headline">Projekte</h2>
 		<div class="projects__wrapper">
 			<ProjectItem
 				color="#000000"

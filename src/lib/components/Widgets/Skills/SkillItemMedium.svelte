@@ -51,6 +51,7 @@
 		&__text {
 			opacity: 0.6;
 			margin: 0;
+			line-height: 1.5;
 		}
 		&__image {
 			position: absolute;

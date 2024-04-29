@@ -12,7 +12,7 @@
 
 <div class="navigation-burger" class:navOpen>
 	<Button size={'small'} type={'nav'} on:click={() => (navOpen = !navOpen)} />
-	<span>Menü</span>
+	<span>Inhalt</span>
 	<div class="navigation-backdrop"></div>
 	<div class="navigation-content">
 		<div class="container">
