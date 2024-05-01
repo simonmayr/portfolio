@@ -17,7 +17,7 @@
 		gsap.from('.navigation .container', {
 			opacity: 0,
 			duration: 1,
-			delay: loadingDuration + 1.2,
+			delay: loadingDuration + 0.6,
 			ease: 'power3.inOut'
 		});
 		handeScroll();
@@ -32,7 +32,7 @@
 			<div class="navigation__burger">
 				<NavigationBurger />
 			</div>
-			<div class="navigation__logo">simon<span>.</span></div>
+			<div class="navigation__logo">simon<span class="clr-primary ff-philosopher">.</span></div>
 			<div class="navigation__social">
 				<Fa icon={faInstagram} scale={1.4} />
 				<Fa icon={faLinkedinIn} scale={1.4} />
@@ -63,21 +63,21 @@
 			@media (max-width: 576px) {
 				grid-template-columns: repeat(2, 1fr);
 			}
-			.scrolled & {
-				backdrop-filter: blur(10px);
-				inset: 10px 10px auto 10px;
-				border-radius: 12px;
-				background-color: rgba(255, 255, 255, 0.05);
-				box-shadow:
-					inset 0.25px 1px 0 0 rgb(254 205 211/3%),
-					0px 0.3px 0.3px rgba(255, 255, 255, 0.01),
-					0px 2.2px 2.5px -0.4px rgba(255, 255, 255, 0.01),
-					0px 4.3px 4.8px -0.8px rgba(255, 255, 255, 0.01),
-					0px 7.5px 8.4px -1.2px rgba(255, 255, 255, 0.01),
-					0px 12.8px 14.4px -1.7px rgba(255, 255, 255, 0.01),
-					0px 21px 23.6px -2.1px rgba(255, 255, 255, 0.01),
-					0px 33.2px 37.4px -2.5px rgba(255, 255, 255, 0.01);
-			}
+			// .scrolled & {
+			// 	backdrop-filter: blur(10px);
+			// 	inset: 10px 10px auto 10px;
+			// 	border-radius: 12px;
+			// 	background-color: rgba(255, 255, 255, 0.05);
+			// 	box-shadow:
+			// 		inset 0.25px 1px 0 0 rgb(254 205 211/3%),
+			// 		0px 0.3px 0.3px rgba(255, 255, 255, 0.01),
+			// 		0px 2.2px 2.5px -0.4px rgba(255, 255, 255, 0.01),
+			// 		0px 4.3px 4.8px -0.8px rgba(255, 255, 255, 0.01),
+			// 		0px 7.5px 8.4px -1.2px rgba(255, 255, 255, 0.01),
+			// 		0px 12.8px 14.4px -1.7px rgba(255, 255, 255, 0.01),
+			// 		0px 21px 23.6px -2.1px rgba(255, 255, 255, 0.01),
+			// 		0px 33.2px 37.4px -2.5px rgba(255, 255, 255, 0.01);
+			// }
 		}
 		&__logo {
 			font-size: 2rem;
@@ -85,9 +85,6 @@
 			text-align: center;
 			@media (max-width: 576px) {
 				text-align: right;
-			}
-			span {
-				color: #32daf1;
 			}
 		}
 		&__social {

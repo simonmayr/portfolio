@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import SkillItemBig from './SkillItemBig.svelte';
 	import SkillItemMedium from './SkillItemMedium.svelte';
 	import SkillItemSmall from './SkillItemSmall.svelte';
@@ -11,61 +11,34 @@
 	import typo3 from '../../../../assets/images/skills/typo3.svg';
 	import svelte from '../../../../assets/images/skills/svelte.svg';
 	import google from '../../../../assets/images/skills/google.svg';
+	import TextAnimation from '$lib/components/UI/TextAnimation.svelte';
+
+	let headlineEl: HTMLElement;
 </script>
 
 <section class="skills">
 	<div class="container">
-		<h2 class="skills__headline headline">Skills</h2>
+		<h2 class="skills__headline headline" bind:this={headlineEl}>
+			<TextAnimation text="Skills" textSuffix="." scrollTrigger={headlineEl} />
+		</h2>
 		<div class="skills__grid">
 			<SkillItemBig
 				image={typo3}
 				headline="Typo3 Webseiten"
 				text="Die meiste Freude habe ich beim erstellen von Webseiten mit dem Content-Management-System Typo3. Es ist ein Tool das sich für kleine aber auch große Webseiten mit vielen Funktionen eignet."
 			/>
-			<SkillItemSmall
-				image={php}
-				headline="PHP"
-				text=""
-			/>
-			<SkillItemSmall
-				image={js}
-				headline="JavaScript"
-				text=""
-			/>
-			<SkillItemSmall
-				image={scss}
-				headline="Scss"
-				text=""
-			/>
-			<SkillItemBig
-				image={svelte}
-				headline="Individualsoftware"
-				text=""
-			/>
-			<SkillItemSmall
-				image={svelte}
-				headline="Svelte"
-				text=""
-			/>
+			<SkillItemSmall image={php} headline="PHP" text="" />
+			<SkillItemSmall image={js} headline="JavaScript" text="" />
+			<SkillItemSmall image={scss} headline="Scss" text="" />
+			<SkillItemBig image={svelte} headline="Individualsoftware" text="" />
+			<SkillItemSmall image={svelte} headline="Svelte" text="" />
 			<SkillItemMedium
 				headline="Webdesign"
 				text="Ich bin zwar kein Vollzeitdesigner, aber ich habe ein Auge für Ästhetik und kreative visuelle Gestaltung von Benutzeroberflächen."
 			/>
-			<SkillItemSmall
-				image={figma}
-				headline="Figma"
-				text=""
-			/>
-			<SkillItemMedium
-				image={google}
-				headline="SEO"
-				text=""
-			/>
-			<SkillItemSmall
-				image={git}
-				headline="Git"
-				text=""
-			/>
+			<SkillItemSmall image={figma} headline="Figma" text="" />
+			<SkillItemMedium image={google} headline="SEO" text="" />
+			<SkillItemSmall image={git} headline="Git" text="" />
 		</div>
 	</div>
 </section>

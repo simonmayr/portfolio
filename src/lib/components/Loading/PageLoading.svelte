@@ -2,13 +2,13 @@
 	import { gsap } from 'gsap';
 	import { getContext, onMount } from 'svelte';
 
-	let loadingDuration = getContext<number>('loadingDuration');
+	let loadingDuration = getContext<number>('loadingDuration') - 0.8;
 
 	onMount(() => {
 		var tl = gsap.timeline({ repeat: -1, repeatDelay: 0 });
 
 		gsap.to('.page-loading', {
-			translateY: '-100%',
+			opacity: 0,
 			duration: 0.8,
 			delay: loadingDuration,
 			ease: 'power3.in'
@@ -52,10 +52,13 @@
 			repeat: -1
 		});
 
-		setTimeout(() => {
-			tl.pause();
-			circleSpin.pause();
-		}, loadingDuration * 1000);
+		setTimeout(
+			() => {
+				tl.pause();
+				circleSpin.pause();
+			},
+			(loadingDuration + 0.8) * 1000
+		);
 	});
 </script>
 
@@ -65,7 +68,7 @@
 		<div class="page-loading-circle__two"></div>
 		<div class="page-loading-circle__three"></div>
 	</div>
-	<div class="page-loading-text headline">loading</div>
+	<div class="page-loading-text ff-philosopher">loading</div>
 </div>
 
 <style lang="scss">
@@ -85,8 +88,16 @@
 		gap: 30px;
 		background-color: var(--clr-secondary);
 		pointer-events: none;
+		&-text {
+			font-size: var(--fs-h3);
+			color: var(--clr-white);
+			&::after {
+				content: '.';
+				color: var(--clr-primary);
+			}
+		}
 		&-circle {
-			--size: 200px;
+			--size: 100px;
 			width: var(--size);
 			aspect-ratio: 1/1;
 			border-radius: 100%;
@@ -104,18 +115,18 @@
 			}
 			&__one {
 				background-color: var(--clr-primary);
-				bottom: -90px;
-				right: -90px;
+				bottom: -40px;
+				right: -40px;
 			}
 			&__two {
 				background-color: var(--clr-white);
-				bottom: -90px;
-				right: 90px;
+				bottom: -40px;
+				right: 40px;
 			}
 			&__three {
 				background-color: var(--clr-secondary);
-				bottom: -90px;
-				right: -90px;
+				bottom: -40px;
+				right: -40px;
 			}
 		}
 	}

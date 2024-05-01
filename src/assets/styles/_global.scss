@@ -6,19 +6,12 @@
 }
 
 .headline {
-	font-size: var(--fs-h2);
-	font-weight: 700;
+	font-family: 'Philosopher', serif;
+	font-size: clamp(3rem, 6vw, var(--fs-h2));
+	// font-size: 6rem;
+	font-weight: bold;
 	margin: 0;
 	position: relative;
-	&:after {
-		content: '.';
-		color: var(--clr-primary);
-	}
-	&--line {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-		padding-bottom: 10px;
-		margin-bottom: 30px;
-	}
 }
 
 .fixed {
@@ -33,6 +26,14 @@
 
 .clr-secondary {
 	color: var(--clr-secondary);
+}
+
+.ff-mulish {
+	font-family: 'Mulish', sans-serif;
+}
+
+.ff-philosopher {
+	font-family: 'Philosopher', serif;
 }
 
 .overflow-hidden {

@@ -15,7 +15,9 @@
 
 <div class="skill-item-small" bind:this={itemEl}>
 	<div class="skill-item-small__image">
-		<img src={image} alt={headline} />
+		<a href="/test">
+			<img src={image} alt={headline} style={`--image: skill-${headline}`} />
+		</a>
 	</div>
 	<div class="skill-item-small__content">
 		<h4 class="skill-item-small__headline">{headline}</h4>
@@ -43,6 +45,7 @@
 				max-width: 80px;
 				max-height: 60px;
 				object-fit: contain;
+				view-transition-name: var(--image);
 			}
 		}
 		&__content {

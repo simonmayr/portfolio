@@ -1,51 +1,51 @@
-<!-- <script lang="ts">
+<script lang="ts">
 	import { gsap } from 'gsap';
 	import { getContext, onMount } from 'svelte';
+	import blob from '../../../assets/images/header/blob.png';
 
 	let loadingDuration = getContext<number>('loadingDuration');
 
 	onMount(() => {
-		gsap.from('.line--line1', {
+		gsap.from('.header-background__shape', {
 			opacity: 0,
-			height: 0,
-			duration: 2,
-			ease: 'power3.inOut',
-			delay: loadingDuration + 0.6
+			duration: 1,
+			delay: loadingDuration,
+			ease: 'power3.inOut'
 		});
-		gsap.from('.line--line2', {
-			opacity: 0,
-			height: 0,
-			duration: 2,
-			ease: 'power3.inOut',
-			delay: loadingDuration + 0.6
+
+		gsap.to('.header-background__shape', {
+			x: 50,
+			rotate: -35,
+			scale: 1.2,
+			duration: 10,
+			delay: loadingDuration + 1.6,
+			ease: 'none',
+			repeat: -1,
+			yoyo: true
 		});
 	});
-</script> -->
+</script>
 
-<div class="line line--line1 line--blur"></div>
-<div class="line line--line2 line--blur"></div>
+<div class="header-background">
+	<img src={blob} class="header-background__shape" alt="" />
+</div>
 
 <style lang="scss">
-	.line {
-		height: 100px;
-		width: 100vw;
+	.header-background {
 		position: absolute;
-		left: 0;
-		top: 50vh;
-		@media (max-width: 992px) {
-			width: 70vw;
+		inset: 0;
+		&__shape {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
 		}
-		&--line1 {
-			rotate: 15deg;
-			background: conic-gradient(from 2.35rad, #7bb8b9, #050aa5);
-		}
-
-		&--line2 {
-			rotate: -15deg;
-			background: conic-gradient(from 4.5rad, #5ee2ff, #3805a5);
-		}
-		&--blur {
-			filter: blur(10rem);
+		&:after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: var(--noise-url);
+			background-size: 100px;
 		}
 	}
 </style>

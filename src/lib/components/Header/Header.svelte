@@ -3,49 +3,30 @@
 	import headerArrow from '../../../assets/icons/arrow-header.svg';
 	import { gsap } from 'gsap';
 	import { getContext, onMount } from 'svelte';
+	import TextAnimation from '../UI/TextAnimation.svelte';
 
 	let loadingDuration = getContext<number>('loadingDuration');
 
-	onMount(() => {
-		gsap.from('.hero-text__content', {
-			opacity: 0,
-			y: '100%',
-			duration: 1,
-			ease: 'power3.inOut',
-			delay: loadingDuration + 0.6,
-			stagger: {
-				each: 0.1,
-				ease: 'linear'
-			}
-		});
+	let headerEl: HTMLElement;
 
-		gsap.from('.header__scroll-down', {
-			opacity: 0,
-			y: '-100%',
-			duration: 2,
-			delay: loadingDuration + 1.2
-		});
-
-		gsap.to('.header__scroll-down img', {
-			y: 10,
-			duration: 1,
-			repeat: -1,
-			yoyo: true
-		});
-	});
+	onMount(() => {});
 </script>
 
-<div class="header">
+<div class="header" bind:this={headerEl}>
 	<HeaderBackground />
 	<div class="header__hero">
 		<div class="hero-text">
-			<span class="hero-text__content">Simon Mayr</span>
+			<TextAnimation delay={loadingDuration} text="Simon Mayr" />
 		</div>
 		<div class="hero-text">
-			<span class="hero-text__content">Webseiten <span class="clr-primary">&</span></span>
+			<span class="hero-text__content"
+				><TextAnimation delay={loadingDuration + 0.1} text="Webseiten " textSuffix="&" />
+			</span>
 		</div>
 		<div class="hero-text">
-			<span class="hero-text__content">Design</span>
+			<span class="hero-text__content"
+				><TextAnimation delay={loadingDuration + 0.2} text="Design" /></span
+			>
 		</div>
 	</div>
 	<div class="header__scroll-down">
@@ -64,16 +45,12 @@
 		align-items: center;
 		justify-content: center;
 		&__hero {
-			width: 100%;
-			max-width: 800px;
+			width: fit-content;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			position: relative;
 			z-index: 2;
-			@media (max-width: 992px) {
-				max-width: 480px;
-			}
 		}
 		&__scroll-down {
 			position: absolute;
@@ -81,25 +58,26 @@
 		}
 	}
 	.hero-text {
-		font-size: var(--fs-h1);
-		line-height: 1;
+		font-size: clamp(3rem, 6vw, var(--fs-h1));
 		font-weight: 800;
 		overflow: hidden;
-		padding: 5px 0;
-		@media (max-width: 576px) {
-			padding: 0 15px;
-			font-size: 13vw;
-			margin-bottom: 10px;
+		margin-bottom: 5px;
+		&:nth-child(1) {
+			text-align: left;
 		}
-		&__content {
-			display: inline-block;
+		&:nth-child(2) {
+			text-align: left;
+			padding-left: 90px;
+			@media (max-width: 576px) {
+				padding-left: 0;
+			}
 		}
-		&:first-child {
-			text-align: right;
-		}
-		&:last-child {
-			text-align: right;
-			padding-right: 90px;
+		&:nth-child(3) {
+			text-align: left;
+			padding-left: 50px;
+			@media (max-width: 576px) {
+				padding-left: 0;
+			}
 		}
 	}
 </style>
