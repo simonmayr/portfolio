@@ -1,6 +1,6 @@
 <script lang="ts">
 	import HeaderBackground from './HeaderBackground.svelte';
-	import headerArrow from '../../../assets/icons/arrow-header.svg';
+	import headerArrow from '$lib/assets/icons/arrow-header.svg';
 	import { gsap } from 'gsap';
 	import { getContext, onMount } from 'svelte';
 	import TextAnimation from '../UI/TextAnimation.svelte';

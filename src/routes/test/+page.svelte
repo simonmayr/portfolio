@@ -1,5 +1,5 @@
 <script lang="ts">
-	import image from '../../assets/images/skills/js.svg';
+	import image from '$lib/assets/images/skills/js.svg';
 </script>
 
 <br />

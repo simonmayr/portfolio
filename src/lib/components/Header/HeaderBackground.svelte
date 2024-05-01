@@ -1,18 +1,11 @@
 <script lang="ts">
 	import { gsap } from 'gsap';
 	import { getContext, onMount } from 'svelte';
-	import blob from '../../../assets/images/header/blob.png';
+	import blob from '$lib/assets/images/header/blob.png';
 
 	let loadingDuration = getContext<number>('loadingDuration');
 
 	onMount(() => {
-		gsap.from('.header-background__shape', {
-			opacity: 0,
-			duration: 1,
-			delay: loadingDuration,
-			ease: 'power3.inOut'
-		});
-
 		gsap.to('.header-background__shape', {
 			x: 50,
 			rotate: -35,

@@ -1,13 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { gsap } from 'gsap';
-
-	import arrow from '../../../../assets/icons/arrow.svg';
-	import ProjectItemImage from './ProjectItemImage.svelte';
+	import arrow from '$lib/assets/icons/arrow.svg';
 	import Button from '$lib/components/UI/Button.svelte';
-
-	gsap.registerPlugin(ScrollTrigger);
+	import ProjectItemImage from './ProjectItemImage.svelte';
 
 	export let color: string;
 	export let bgcolor: string;

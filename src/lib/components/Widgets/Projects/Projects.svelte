@@ -1,13 +1,18 @@
-<script>
+<script lang="ts">
 	import ProjectItem from './ProjectItem.svelte';
-	import buddhaNepaliKitchen from '../../../../assets/images/projects/buddha.jpeg';
-	import mkv from '../../../../assets/images/projects/mkv.jpeg';
-	import swz from '../../../../assets/images/projects/15.jpg';
+	import buddhaNepaliKitchen from '$lib/assets/images/projects/buddha.jpeg';
+	import mkv from '$lib/assets/images/projects/mkv.jpeg';
+	import swz from '$lib/assets/images/projects/15.jpg';
+	import TextAnimation from '$lib/components/UI/TextAnimation.svelte';
+
+	let headlineEl: HTMLElement;
 </script>
 
 <section class="projects">
 	<div class="container">
-		<h2 class="headline">Projekte</h2>
+		<h2 class="projects__headline headline" bind:this={headlineEl}>
+			<TextAnimation text="Projekte" textSuffix="." scrollTrigger={headlineEl} />
+		</h2>
 		<div class="projects__wrapper">
 			<ProjectItem
 				color="#000000"
@@ -51,7 +56,7 @@
 			display: grid;
 			grid-template-columns: repeat(25, 1fr);
 			grid-auto-rows: 100px;
-			margin-top: 50px;
+			margin-top: 40px;
 			@media (max-width: 992px) {
 				display: flex;
 				flex-direction: column;

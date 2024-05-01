@@ -1,10 +1,14 @@
 <script lang="ts">
-	import '../assets/styles/app.scss';
+	import '$lib/assets/styles/app.scss';
+	import noise from '$lib/assets/images/noise.png';
 	import Navigation from '$lib/components/Navigation/Navigation.svelte';
 	import PageLoading from '$lib/components/Loading/PageLoading.svelte';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onNavigate } from '$app/navigation';
 	import { setContext } from 'svelte';
-	import noise from '../assets/images/noise.png';
+	import { gsap } from 'gsap';
+
+	gsap.registerPlugin(ScrollTrigger);
 
 	setContext<number>('loadingDuration', 1.6);
 

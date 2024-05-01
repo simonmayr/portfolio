@@ -28,14 +28,12 @@
 		}
 	};
 
-	gsap.registerPlugin(ScrollTrigger);
-
 	onMount(async () => {
 		await tick();
 
 		if (!scrollTrigger) {
 			gsap.from(textEl.querySelector('.text-animation__blend'), animationBlendConfig);
-			gsap.from(textEl.querySelectorAll('.text-animation__word'), animationWordConfig);
+			gsap.from(textEl.querySelectorAll('.text-animation__letter'), animationWordConfig);
 		} else {
 			let animationScrollTriggerConfig = {
 				trigger: scrollTrigger,
@@ -47,7 +45,7 @@
 				...animationBlendConfig,
 				scrollTrigger: animationScrollTriggerConfig
 			});
-			gsap.from(textEl.querySelectorAll('.text-animation__word'), {
+			gsap.from(textEl.querySelectorAll('.text-animation__letter'), {
 				...animationWordConfig,
 				scrollTrigger: animationScrollTriggerConfig
 			});
@@ -60,11 +58,11 @@
 		{#if letter === ' '}
 			&nbsp;
 		{:else}
-			<span class="text-animation__word">{letter}</span>
+			<span class="text-animation__letter">{letter}</span>
 		{/if}
 	{/each}
 	{#if textSuffix}
-		<span class="text-animation__word clr-primary ff-philosopher">{textSuffix}</span>
+		<span class="text-animation__letter clr-primary ff-philosopher">{textSuffix}</span>
 	{/if}
 	<div class="text-animation__blend"></div>
 </span>
@@ -83,9 +81,6 @@
 			bottom: 0;
 			width: 0%;
 			background-color: #eee;
-		}
-		&__word {
-			display: inline-block;
 		}
 	}
 </style>
