@@ -10,6 +10,7 @@
 	onMount(() => {
 		gsap.from('.about__word', {
 			opacity: 0.05,
+			filter: 'blur(5px)',
 			scrollTrigger: {
 				trigger: '.about__text',
 				start: 'top 80%',

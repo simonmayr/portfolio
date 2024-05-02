@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { gsap } from 'gsap';
 	import { onMount, tick } from 'svelte';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 	export let text: string;
 	export let textSuffix: string | null = null;
@@ -17,10 +16,11 @@
 		duration: 1
 	};
 
-	let animationWordConfig = {
-		y: '100%',
+	let animationLetterConfig = {
+		y: '120%',
 		delay: delay + 0.6,
 		ease: 'power3.out',
+		filter: 'blur(15px)',
 		duration: 1,
 		stagger: {
 			each: 0.05,
@@ -33,7 +33,7 @@
 
 		if (!scrollTrigger) {
 			gsap.from(textEl.querySelector('.text-animation__blend'), animationBlendConfig);
-			gsap.from(textEl.querySelectorAll('.text-animation__letter'), animationWordConfig);
+			gsap.from(textEl.querySelectorAll('.text-animation__letter'), animationLetterConfig);
 		} else {
 			let animationScrollTriggerConfig = {
 				trigger: scrollTrigger,
@@ -46,7 +46,7 @@
 				scrollTrigger: animationScrollTriggerConfig
 			});
 			gsap.from(textEl.querySelectorAll('.text-animation__letter'), {
-				...animationWordConfig,
+				...animationLetterConfig,
 				scrollTrigger: animationScrollTriggerConfig
 			});
 		}

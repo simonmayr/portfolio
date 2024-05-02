@@ -1,7 +1,6 @@
 <script lang="ts">
 	import HeaderBackground from './HeaderBackground.svelte';
 	import headerArrow from '$lib/assets/icons/arrow-header.svg';
-	import { gsap } from 'gsap';
 	import { getContext, onMount } from 'svelte';
 	import TextAnimation from '../UI/TextAnimation.svelte';
 
@@ -20,12 +19,12 @@
 		</div>
 		<div class="hero-text">
 			<span class="hero-text__content"
-				><TextAnimation delay={loadingDuration + 0.1} text="Webseiten " textSuffix="&" />
+				><TextAnimation delay={loadingDuration + 0.2} text="Webseiten " textSuffix="&" />
 			</span>
 		</div>
 		<div class="hero-text">
 			<span class="hero-text__content"
-				><TextAnimation delay={loadingDuration + 0.2} text="Design" /></span
+				><TextAnimation delay={loadingDuration + 0.4} text="Design" /></span
 			>
 		</div>
 	</div>

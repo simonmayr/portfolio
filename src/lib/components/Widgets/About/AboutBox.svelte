@@ -11,6 +11,7 @@
 		gsap.from(element, {
 			opacity: 0.05,
 			scale: 0.95,
+			filter: 'blur(2px)',
 			scrollTrigger: {
 				trigger: element,
 				start: 'top 70%',

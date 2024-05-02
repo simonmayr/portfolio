@@ -14,6 +14,7 @@
 		gsap.from(element, {
 			opacity: 0.05,
 			scale: 0.95,
+			filter: 'blur(2px)',
 			scrollTrigger: {
 				trigger: element,
 				start: 'top 70%',
@@ -45,6 +46,9 @@
 		gap: 15px;
 		width: 100%;
 		grid-column: span 2;
+		transition:
+			color 300ms ease,
+			background-color 300ms ease;
 		&:nth-child(1) {
 			grid-column: span 3;
 		}
@@ -60,7 +64,6 @@
 			align-items: center;
 		}
 		&__headline {
-			color: #fff;
 			font-size: 2rem;
 			margin-top: 0;
 			margin-bottom: 3px;
