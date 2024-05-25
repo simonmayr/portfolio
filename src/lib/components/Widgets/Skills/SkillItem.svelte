@@ -49,11 +49,15 @@
 		transition:
 			color 300ms ease,
 			background-color 300ms ease;
-		&:nth-child(1) {
-			grid-column: span 3;
+		@media (max-width: 991px) {
+			grid-column: span 6;
 		}
+		&:nth-child(1),
 		&:nth-child(2) {
 			grid-column: span 3;
+			@media (max-width: 991px) {
+				grid-column: span 6;
+			}
 		}
 		@media (max-width: 576px) {
 			padding: 15px;
@@ -64,9 +68,10 @@
 			align-items: center;
 		}
 		&__headline {
-			font-size: 2rem;
+			font-size: var(--fs-h3);
 			margin-top: 0;
 			margin-bottom: 3px;
+			hyphens: auto;
 		}
 		&__text {
 			opacity: 0.75;
@@ -74,6 +79,12 @@
 			line-height: 1.4;
 			max-width: 350px;
 			margin: 0;
+			@media (max-width: 991px) {
+				max-width: 80%;
+			}
+			@media (max-width: 576px) {
+				max-width: 100%;
+			}
 		}
 	}
 </style>

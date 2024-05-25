@@ -9,7 +9,6 @@
 	let headlineEl: HTMLElement;
 
 	const age = calculateYearsSince('2001-05-28');
-
 	const workExperience = calculateYearsSince('2015-8-02');
 
 	onMount(() => {
@@ -60,6 +59,9 @@
 	.about {
 		margin-top: 50px;
 		padding-block: 100px 50px;
+		@media (max-width: 768px) {
+			padding-block: 70px 30px;
+		}
 		&__headline {
 			margin-bottom: 20px;
 		}
@@ -71,20 +73,41 @@
 			font-size: 2rem;
 			line-height: 1.4;
 			font-weight: 200;
+			@media (max-width: 991px) {
+				font-size: 1.5rem;
+			}
 		}
 		&__boxes {
 			display: flex;
 			gap: 35px;
 			margin-top: 60px;
+			@media (max-width: 576px) {
+				gap: 20px;
+			}
+			@media (max-width: 355px) {
+				flex-direction: column;
+			}
 			&-left,
 			&-right {
 				width: 33%;
 				display: flex;
 				flex-direction: column;
 				gap: 35px;
+				@media (max-width: 991px) {
+					width: 50%;
+				}
+				@media (max-width: 576px) {
+					gap: 20px;
+				}
+				@media (max-width: 355px) {
+					width: 100%;
+				}
 			}
 			&-right {
 				padding-top: 40px;
+				@media (max-width: 355px) {
+					padding-top: 0px;
+				}
 			}
 		}
 	}

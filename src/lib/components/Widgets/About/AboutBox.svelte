@@ -43,6 +43,10 @@
 		transition:
 			color 300ms ease,
 			background-color 300ms ease;
+		@media (max-width: 576px) {
+			padding: 15px;
+			height: 140px;
+		}
 		&__number {
 			font-size: 3.5rem;
 			line-height: 1;

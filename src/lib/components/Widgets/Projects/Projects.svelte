@@ -39,14 +39,18 @@
 	.projects {
 		padding-block: 100px 50px;
 		position: relative;
+		@media (max-width: 768px) {
+			padding-block: 70px 30px;
+		}
 		&__wrapper {
 			width: 100%;
-			margin-top: 120px;
+			margin-top: 100px;
 			display: flex;
 			flex-direction: column;
-			gap: 120px;
+			gap: 100px;
 			@media (max-width: 768px) {
-				margin-top: 10px;
+				margin-top: 70px;
+				gap: 70px;
 			}
 		}
 		&__teaser {

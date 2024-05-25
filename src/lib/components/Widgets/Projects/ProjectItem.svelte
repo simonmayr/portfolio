@@ -72,11 +72,25 @@
 		isolation: isolate;
 		&:nth-child(even) {
 			flex-direction: row-reverse;
+			@media (max-width: 991px) {
+				flex-direction: column;
+			}
+		}
+		@media (max-width: 991px) {
+			flex-direction: column;
+			gap: 30px;
+			align-items: flex-start;
 		}
 		&__image {
 			width: 60%;
 			filter: brightness(0.9);
 			clip-path: circle(70% at 50% 50%);
+			@media (max-width: 991px) {
+				width: 80%;
+			}
+			@media (max-width: 576px) {
+				width: 100%;
+			}
 			img {
 				width: 100%;
 				height: auto;
@@ -93,6 +107,12 @@
 			display: flex;
 			flex-direction: column;
 			width: 30%;
+			@media (max-width: 991px) {
+				width: 60%;
+			}
+			@media (max-width: 576px) {
+				width: 100%;
+			}
 		}
 		&__description {
 			margin: 0;

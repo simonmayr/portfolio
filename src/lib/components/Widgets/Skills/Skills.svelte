@@ -46,6 +46,9 @@
 <style lang="scss">
 	.skills {
 		padding-block: 100px 50px;
+		@media (max-width: 768px) {
+			padding-block: 70px 30px;
+		}
 		&__grid {
 			display: grid;
 			grid-template-columns: repeat(6, 1fr);

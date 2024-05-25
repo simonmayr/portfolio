@@ -35,7 +35,9 @@
 				</div>
 				<div class="navigation__logo">simon<span class="clr-primary ff-philosopher">.</span></div>
 				<div class="navigation__social">
-					<a href="https://www.instagram.com/simon_mayrr" target="_blank"><Fa icon={faInstagram} scale={1.4} /></a>
+					<a href="https://www.instagram.com/simon_mayrr" target="_blank"
+						><Fa icon={faInstagram} scale={1.4} /></a
+					>
 					<a href="https://www.linkedin.com/in/simon-mayr-365349248/" target="_blank"
 						><Fa icon={faLinkedinIn} scale={1.4} /></a
 					>
@@ -70,7 +72,7 @@
 			}
 		}
 		&__logo {
-			font-size: 2rem;
+			font-size: var(--fs-h3);
 			font-weight: 600;
 			text-align: center;
 			@media (max-width: 576px) {
