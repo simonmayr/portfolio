@@ -35,7 +35,7 @@
 
 <style lang="scss">
 	.header {
-		height: 100dvh;
+		height: 100vh;
 		min-height: 500px;
 		width: 100vw;
 		position: relative;
