@@ -80,7 +80,7 @@
 			top: 0;
 			bottom: 0;
 			width: 0%;
-			background-color: #eee;
+			background-color: var(--clr-white);
 		}
 	}
 </style>

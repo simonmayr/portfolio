@@ -32,11 +32,11 @@
 	});
 
 	const handleMouseEnter = () => {
-		gsap.to(buttonFlairEl, { scale: 2.2, duration: 0.2, ease: 'power1.out' });
+		gsap.to(buttonFlairEl, { scale: 2.2, duration: 0.3, ease: 'power1.out' });
 	};
 
 	const handleMouseLeave = () => {
-		gsap.to(buttonFlairEl, { scale: 0, duration: 0.2, ease: 'power1.out' });
+		gsap.to(buttonFlairEl, { scale: 0, duration: 0.3, ease: 'power1.out' });
 	};
 </script>
 
@@ -62,9 +62,9 @@
 		cursor: pointer;
 		position: relative;
 		display: block;
-		border-radius: 500px;
+		border-radius: 10px;
 		border: 2px solid var(--clr-primary);
-		color: white;
+		color: var(--clr-primary);
 		background-color: transparent;
 		display: inline-flex;
 		align-items: center;
@@ -72,12 +72,13 @@
 		overflow: hidden;
 		padding: 10px 20px;
 		isolation: isolate;
-		transition: 0.6s;
+		transition: 0.3s;
 		width: fit-content;
 		&--small {
 			font-size: 0.8rem;
-			padding: 2px 10px;
+			padding: 8px 15px;
 			border-width: 1px;
+			border-radius: 6px;
 		}
 		&--medium {
 			font-size: 1rem;
@@ -94,6 +95,7 @@
 			&:hover {
 				transition: background-color 0.2s 0.2s;
 				background-color: var(--clr-primary);
+				color: var(--clr-secondary);
 			}
 		}
 		&--black {
@@ -122,6 +124,7 @@
 			align-items: center;
 			justify-content: center;
 			overflow: hidden;
+			padding: 0;
 		}
 		&-flair {
 			width: 100%;

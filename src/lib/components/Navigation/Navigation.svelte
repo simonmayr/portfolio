@@ -14,7 +14,7 @@
 	};
 
 	onMount(() => {
-		gsap.from('.navigation .container', {
+		gsap.from('.navigation', {
 			opacity: 0,
 			duration: 1,
 			delay: loadingDuration + 0.6,
@@ -27,15 +27,19 @@
 <svelte:window on:scroll={() => handeScroll()} />
 
 <div class="navigation" class:scrolled>
-	<div class="container">
-		<div class="navigation__wrapper">
-			<div class="navigation__burger">
-				<NavigationBurger />
-			</div>
-			<div class="navigation__logo">simon<span class="clr-primary ff-philosopher">.</span></div>
-			<div class="navigation__social">
-				<Fa icon={faInstagram} scale={1.4} />
-				<Fa icon={faLinkedinIn} scale={1.4} />
+	<div class="navigation__wrapper">
+		<div class="container">
+			<div class="navigation__inner">
+				<div class="navigation__burger">
+					<NavigationBurger />
+				</div>
+				<div class="navigation__logo">simon<span class="clr-primary ff-philosopher">.</span></div>
+				<div class="navigation__social">
+					<a href="https://www.instagram.com/simon_mayrr" target="_blank"><Fa icon={faInstagram} scale={1.4} /></a>
+					<a href="https://www.linkedin.com/in/simon-mayr-365349248/" target="_blank"
+						><Fa icon={faLinkedinIn} scale={1.4} /></a
+					>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -46,38 +50,24 @@
 		position: fixed;
 		inset: 0 0 auto 0;
 		z-index: 10;
-		padding: 30px 0;
-		transition: 0.2s;
-		@media (max-width: 576px) {
-			padding: 15px 0;
-		}
-		&.scrolled {
-			padding: 15px 0;
-		}
 		&__wrapper {
+			padding: 30px 0;
+			transition: 0.2s;
+			@media (max-width: 576px) {
+				padding: 10px 0;
+			}
+			.scrolled & {
+				padding: 10px 0;
+				background-color: var(--clr-dark-gray);
+			}
+		}
+		&__inner {
 			display: grid;
 			align-items: center;
 			grid-template-columns: repeat(3, 1fr);
-			padding: 0 15px;
-			transition: 0.2s;
 			@media (max-width: 576px) {
 				grid-template-columns: repeat(2, 1fr);
 			}
-			// .scrolled & {
-			// 	backdrop-filter: blur(10px);
-			// 	inset: 10px 10px auto 10px;
-			// 	border-radius: 12px;
-			// 	background-color: rgba(255, 255, 255, 0.05);
-			// 	box-shadow:
-			// 		inset 0.25px 1px 0 0 rgb(254 205 211/3%),
-			// 		0px 0.3px 0.3px rgba(255, 255, 255, 0.01),
-			// 		0px 2.2px 2.5px -0.4px rgba(255, 255, 255, 0.01),
-			// 		0px 4.3px 4.8px -0.8px rgba(255, 255, 255, 0.01),
-			// 		0px 7.5px 8.4px -1.2px rgba(255, 255, 255, 0.01),
-			// 		0px 12.8px 14.4px -1.7px rgba(255, 255, 255, 0.01),
-			// 		0px 21px 23.6px -2.1px rgba(255, 255, 255, 0.01),
-			// 		0px 33.2px 37.4px -2.5px rgba(255, 255, 255, 0.01);
-			// }
 		}
 		&__logo {
 			font-size: 2rem;
@@ -95,6 +85,9 @@
 			padding-right: 5px;
 			@media (max-width: 576px) {
 				display: none;
+			}
+			a {
+				color: white;
 			}
 		}
 	}

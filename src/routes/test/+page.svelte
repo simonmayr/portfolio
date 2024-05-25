@@ -1,15 +1,14 @@
 <script lang="ts">
-	import image from '$lib/assets/images/skills/js.svg';
 </script>
 
 <br />
 <br />
 <br />
 
-<img src={image} alt="JavaScript" style={`--image: skill-JavaScript`} />
+<span style={`--image: skill-JavaScript`} />
 
 <style>
-	img {
+	span {
 		view-transition-name: var(--image);
 	}
 </style>

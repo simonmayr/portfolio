@@ -2,41 +2,42 @@
 	import SkillItem from './SkillItem.svelte';
 	import TextAnimation from '$lib/components/UI/TextAnimation.svelte';
 	import { faCodepen, faFigma, faTypo3 } from '@fortawesome/free-brands-svg-icons';
-	import { faSearch, faCode } from '@fortawesome/free-solid-svg-icons';
+	import { faSearch, faCode, faLaptop, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 
 	let headlineEl: HTMLElement;
 </script>
 
-<section class="skills">
+<section class="skills" id="skills">
 	<div class="container">
 		<h2 class="skills__headline headline" bind:this={headlineEl}>
 			<TextAnimation text="Skills" textSuffix="." scrollTrigger={headlineEl} />
 		</h2>
 		<div class="skills__grid">
+			<!-- List some skills i have and explain what they are and how i use them -->
 			<SkillItem
-				icon={faTypo3}
+				icon={faLaptopCode}
 				headline="Webentwicklung"
-				text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"
+				text="Ich entwickle kreative und wartungsfreundliche Webseiten mit modernem Design, die perfekt auf die Bedürfnisse verschiedenster Branchen und Zielgruppen zugeschnitten sind."
 			/>
 			<SkillItem
 				icon={faCode}
 				headline="Individualsoftware"
-				text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"
+				text="Maßgeschneiderte Individualsoftware, die exakt auf die spezifischen Anforderungen und Herausforderungen Ihres Unternehmens abgestimmt ist."
+			/>
+			<SkillItem
+				icon={faTypo3}
+				headline="Typo3"
+				text="Mit Typo3 entwickle ich flexible und leistungsstarke Websites die sich durch Benutzerfreundlichkeit auszeichnen."
 			/>
 			<SkillItem
 				icon={faSearch}
 				headline="SEO"
-				text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna "
+				text="Optimierung Ihrer Website für Suchmaschinen (SEO), um sicherzustellen, dass Sie online besser gefunden wird."
 			/>
 			<SkillItem
 				icon={faFigma}
 				headline="Design"
-				text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt"
-			/>
-			<SkillItem
-				icon={faCodepen}
-				headline="Nochwas"
-				text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"
+				text="Kreatives und ansprechendes Design, das Sie perfekt widerspiegelt und Ihre Zielgruppe begeistert."
 			/>
 		</div>
 	</div>
@@ -44,7 +45,7 @@
 
 <style lang="scss">
 	.skills {
-		padding-block: 75px;
+		padding-block: 100px 50px;
 		&__grid {
 			display: grid;
 			grid-template-columns: repeat(6, 1fr);

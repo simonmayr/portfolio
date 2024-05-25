@@ -1,47 +1,35 @@
 <script lang="ts">
 	import ProjectItem from './ProjectItem.svelte';
-	import buddhaNepaliKitchen from '$lib/assets/images/projects/buddha.jpeg';
-	import mkv from '$lib/assets/images/projects/mkv.jpeg';
-	import swz from '$lib/assets/images/projects/15.jpg';
 	import TextAnimation from '$lib/components/UI/TextAnimation.svelte';
+	import buddhaNepaliKitchen from '$lib/assets/images/projects/buddha.png';
+	import mkv from '$lib/assets/images/projects/mkv.png';
 
 	let headlineEl: HTMLElement;
 </script>
 
-<section class="projects">
+<section class="projects" id="projects">
 	<div class="container">
 		<h2 class="projects__headline headline" bind:this={headlineEl}>
 			<TextAnimation text="Projekte" textSuffix="." scrollTrigger={headlineEl} />
 		</h2>
+		<p class="projects__teaser">
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+			invidunt ut labore.
+		</p>
 		<div class="projects__wrapper">
 			<ProjectItem
-				color="#000000"
-				bgcolor="#FFFCF3"
-				title="Buddha Nepali Kitchen"
-				link="https://www.buddha-nepali-kitchen.at/"
-				gridColumn="span 12"
-				gridRow="span 5"
-				badges={['Typo3', 'PHP']}
-				image={buddhaNepaliKitchen}
-			/>
-			<ProjectItem
-				color="#000000"
-				bgcolor="#FDF2FF"
 				title="Musikkapelle Völs"
+				description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore"
 				link="https://www.mk-voels.at/"
-				gridColumn="14 / span 12"
-				gridRow="6 / span 5"
 				badges={['Typo3', 'PHP']}
 				image={mkv}
 			/>
 			<ProjectItem
-				color="#000000"
-				bgcolor="#E7ECFF"
-				title="Schwimmklub Zirl"
-				gridColumn="span 12"
-				gridRow="11 / span 5"
-				badges={['Symfony', 'PHP']}
-				image={swz}
+				title="Buddha Nepali Kitchen"
+				description="Buddha Nepali Kitchen ist ein nepalesisches Restaurant in Innsbruck. Die Website wurde mit Typo3 umgesetzt."
+				link="https://www.buddha-nepali-kitchen.at/"
+				badges={['Typo3', 'PHP']}
+				image={buddhaNepaliKitchen}
 			/>
 		</div>
 	</div>
@@ -49,21 +37,22 @@
 
 <style lang="scss">
 	.projects {
-		padding-block: 75px;
+		padding-block: 100px 50px;
 		position: relative;
 		&__wrapper {
 			width: 100%;
-			display: grid;
-			grid-template-columns: repeat(25, 1fr);
-			grid-auto-rows: 100px;
-			margin-top: 40px;
-			@media (max-width: 992px) {
-				display: flex;
-				flex-direction: column;
-			}
+			margin-top: 120px;
+			display: flex;
+			flex-direction: column;
+			gap: 120px;
 			@media (max-width: 768px) {
 				margin-top: 10px;
 			}
+		}
+		&__teaser {
+			max-width: 300px;
+			line-height: 1.55;
+			margin-block: 20px 0;
 		}
 	}
 </style>

@@ -3,9 +3,14 @@
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import AboutBox from './AboutBox.svelte';
+	import { calculateYearsSince } from '$lib/utils/calculateYearsSince';
 
-	let aboutText = `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.`;
+	let aboutText = `Hallo, mein Name ist Simon Mayr und ich bin ein leidenschaftlicher Webentwickler aus Tirol. Seit Jahren fasziniert mich die Erstellung professioneller und kreativer Webseiten sowie Webanwendungen. Ich strebe stets nach neuen und herausfordernden Projekten, bei denen ich mein Können unter Beweis stellen kann.`;
 	let headlineEl: HTMLElement;
+
+	const age = calculateYearsSince('2001-05-28');
+
+	const workExperience = calculateYearsSince('2015-8-02');
 
 	onMount(() => {
 		gsap.from('.about__word', {
@@ -15,7 +20,7 @@
 				trigger: '.about__text',
 				start: 'top 80%',
 				end: 'bottom 60%',
-				scrub: 1,
+				scrub: 1
 			},
 			stagger: {
 				each: 0.03
@@ -24,7 +29,7 @@
 	});
 </script>
 
-<section class="about">
+<section class="about" id="about">
 	<div class="container">
 		<div class="about__content">
 			<h2 class="about__headline headline" bind:this={headlineEl}>
@@ -39,12 +44,12 @@
 			</div>
 			<div class="about__boxes">
 				<div class="about__boxes-left">
-					<AboutBox number={22} text="Jahre jung" />
-					<AboutBox number={13} text="Pflanzen am <br> Leben erhalten" />
+					<AboutBox number={age} text="Jahre Alt" />
+					<AboutBox number={17} text="Abgeschlossene <br> Projekte" />
 				</div>
 				<div class="about__boxes-right">
-					<AboutBox number={8} text="Jahre <br> erfahrung" />
-					<AboutBox number={7} text="Abgeschlossene <br> Projekte" />
+					<AboutBox number={workExperience} text="Jahre <br> Berufserfahrung" />
+					<AboutBox number={13} text="Pflanzen am <br> Leben erhalten" />
 				</div>
 			</div>
 		</div>
@@ -53,7 +58,8 @@
 
 <style lang="scss">
 	.about {
-		padding-block: 150px 75px;
+		margin-top: 50px;
+		padding-block: 100px 50px;
 		&__headline {
 			margin-bottom: 20px;
 		}

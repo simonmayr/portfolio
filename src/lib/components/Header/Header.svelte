@@ -43,6 +43,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		overflow: hidden;
 		&__hero {
 			width: fit-content;
 			display: flex;
@@ -59,6 +60,7 @@
 	.hero-text {
 		font-size: clamp(3rem, 6vw, var(--fs-h1));
 		font-weight: 800;
+		line-height: 1.2;
 		overflow: hidden;
 		margin-bottom: 5px;
 		&:nth-child(1) {
