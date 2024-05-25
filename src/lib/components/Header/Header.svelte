@@ -54,7 +54,12 @@
 		}
 		&__scroll-down {
 			position: absolute;
-			bottom: 15px;
+			top: calc(100vh - 50px);
+			img {
+				@media (max-width: 576px) {
+					height: 30px;
+				}
+			}
 		}
 	}
 	.hero-text {
