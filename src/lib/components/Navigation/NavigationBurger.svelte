@@ -82,7 +82,7 @@
 <style lang="scss">
 	.navigation-backdrop {
 		position: absolute;
-		width: 400vh;
+		width: max(400vw, 400vh);
 		aspect-ratio: 1/1;
 		top: 50%;
 		left: calc(50% - 28px);
@@ -183,7 +183,7 @@
 			}
 			&__link {
 				color: var(--clr-secondary);
-				font-size: 4rem;
+				font-size: clamp(3rem, 5vw, var(--fs-h2));
 				font-weight: bold;
 				width: fit-content;
 				text-decoration: none;
@@ -230,14 +230,14 @@
 		}
 		&-decoration {
 			position: absolute;
-			left: 0;
-			bottom: 0;
-			font-size: 37vw;
+			left: -7vw;
+			top: calc(100% - 21vw);
+			font-size: 40vw;
 			line-height: 0.7;
 			pointer-events: none;
 			color: transparent;
 			-webkit-text-stroke: 1px var(--clr-dark-gray);
-			opacity: 0.05;
+			opacity: 0.1;
 		}
 	}
 </style>
