@@ -1,0 +1,13 @@
+services:
+  portfolio-app:
+    image: portfolio-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: "node"
+    environment:
+      - NODE_ENV=production
+      - TZ=Europe/Vienna
+    restart: unless-stopped
+    ports:
+      - 3000:3000
