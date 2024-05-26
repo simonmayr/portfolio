@@ -74,7 +74,7 @@
 			line-height: 1.4;
 			font-weight: 200;
 			@media (max-width: 991px) {
-				font-size: 1.5rem;
+				font-size: 1.1rem;
 			}
 		}
 		&__boxes {
