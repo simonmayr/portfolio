@@ -5,6 +5,14 @@
 	import Projects from '$lib/components/Widgets/Projects/Projects.svelte';
 </script>
 
+<svelte:head>
+	<title>simon.</title>
+	<meta name="description" content="This is where the description goes for SEO" />
+	<meta name="keywords" content="Simon, Mayr, " />
+</svelte:head>
+
+
+
 <Header />
 <About />
 <Skills />

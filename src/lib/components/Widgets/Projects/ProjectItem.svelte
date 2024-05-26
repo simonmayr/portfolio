@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import Button from '$lib/components/UI/Button.svelte';
-	import ProjectItemImage from './ProjectItemImage.svelte';
 
 	export let title: string;
 	export let description: string;
@@ -56,7 +55,7 @@
 		</p>
 		<div class="project-item__side">
 			{#if link}
-				<Button size="small">Zur Webseite</Button>
+				<Button href={link} external={true} size="small">Zur Webseite</Button>
 			{/if}
 		</div>
 	</div>

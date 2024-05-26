@@ -5,6 +5,8 @@
 	export let size: 'small' | 'medium' | 'large' = 'medium';
 	export let color: 'primary' | 'black' = 'primary';
 	export let type: 'normal' | 'nav' = 'normal';
+	export let href: string | undefined = undefined;
+	export let external: boolean = false;
 
 	let buttonEl: HTMLElement;
 	let buttonFlairEl: HTMLElement;
@@ -40,28 +42,48 @@
 	};
 </script>
 
-<button
-	class="button"
-	class:button--small={size === 'small'}
-	class:button--medium={size === 'medium'}
-	class:button--large={size === 'large'}
-	class:button--primary={color === 'primary'}
-	class:button--black={color === 'black'}
-	class:button--nav={type === 'nav'}
-	on:mouseenter={handleMouseEnter}
-	on:mouseleave={handleMouseLeave}
-	on:click
-	bind:this={buttonEl}
->
-	<slot />
-	<span class="button-flair" bind:this={buttonFlairEl}></span>
-</button>
+{#if href}
+	<a
+		class="button"
+		class:button--small={size === 'small'}
+		class:button--medium={size === 'medium'}
+		class:button--large={size === 'large'}
+		class:button--primary={color === 'primary'}
+		class:button--black={color === 'black'}
+		class:button--nav={type === 'nav'}
+		on:mouseenter={handleMouseEnter}
+		on:mouseleave={handleMouseLeave}
+		on:click
+		bind:this={buttonEl}
+		{href}
+		target={external ? '_blank' : undefined}
+	>
+		<slot />
+		<span class="button-flair" bind:this={buttonFlairEl}></span>
+	</a>
+{:else}
+	<button
+		class="button"
+		class:button--small={size === 'small'}
+		class:button--medium={size === 'medium'}
+		class:button--large={size === 'large'}
+		class:button--primary={color === 'primary'}
+		class:button--black={color === 'black'}
+		class:button--nav={type === 'nav'}
+		on:mouseenter={handleMouseEnter}
+		on:mouseleave={handleMouseLeave}
+		on:click
+		bind:this={buttonEl}
+	>
+		<slot />
+		<span class="button-flair" bind:this={buttonFlairEl}></span>
+	</button>
+{/if}
 
 <style lang="scss">
 	.button {
 		cursor: pointer;
 		position: relative;
-		display: block;
 		border-radius: 10px;
 		border: 2px solid var(--clr-primary);
 		color: var(--clr-primary);
@@ -74,6 +96,7 @@
 		isolation: isolate;
 		transition: 0.3s;
 		width: fit-content;
+		text-decoration: none;
 		&--small {
 			font-size: 0.8rem;
 			padding: 8px 15px;

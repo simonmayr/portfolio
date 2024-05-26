@@ -76,7 +76,14 @@
 			font-weight: 600;
 			text-align: center;
 			@media (max-width: 576px) {
-				text-align: right;
+				text-align: left;
+				order: -1;
+			}
+		}
+		&__burger {
+			@media (max-width: 576px) {
+				display: flex;
+				justify-content: flex-end;
 			}
 		}
 		&__social {

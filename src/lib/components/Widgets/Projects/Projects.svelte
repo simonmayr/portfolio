@@ -1,10 +1,25 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { gsap } from 'gsap';
 	import ProjectItem from './ProjectItem.svelte';
 	import TextAnimation from '$lib/components/UI/TextAnimation.svelte';
 	import buddhaNepaliKitchen from '$lib/assets/images/projects/buddha.png';
 	import mkv from '$lib/assets/images/projects/mkv.png';
 
 	let headlineEl: HTMLElement;
+	let teaserEl: HTMLElement;
+
+	onMount(() => {
+		gsap.from(teaserEl, {
+			opacity: 0,
+			ease: 'power3.inOut',
+			duration: 1,
+			scrollTrigger: {
+				trigger: teaserEl,
+				start: 'top 80%'
+			}
+		});
+	});
 </script>
 
 <section class="projects" id="projects">
@@ -12,7 +27,7 @@
 		<h2 class="projects__headline headline" bind:this={headlineEl}>
 			<TextAnimation text="Projekte" textSuffix="." scrollTrigger={headlineEl} />
 		</h2>
-		<p class="projects__teaser">
+		<p class="projects__teaser" bind:this={teaserEl}>
 			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
 			invidunt ut labore.
 		</p>

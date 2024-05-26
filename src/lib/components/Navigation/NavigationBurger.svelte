@@ -4,6 +4,7 @@
 	import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 	let navOpen = false;
+	let hoveredId: string | null = null;
 
 	$: if (!import.meta.env.SSR) {
 		document.body.style.overflow = navOpen ? 'hidden' : 'auto';
@@ -51,8 +52,16 @@
 			<div class="navigation-content-main">
 				<div class="navigation-content-main__nav">
 					{#each navigationPoints as { id, label }}
-						<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-						<span class="navigation-content-main__link" on:click={() => navigate(id)}>{label}</span>
+						<!-- svelte-ignore a11y-mouse-events-have-key-events a11y-no-static-element-interactions a11y-click-events-have-key-events -->
+						<span
+							role="link"
+							class="navigation-content-main__link {hoveredId !== id && hoveredId !== null
+								? 'blurred'
+								: ''}"
+							on:click={() => navigate(id)}
+							on:mouseover={() => (hoveredId = id)}
+							on:mouseout={() => (hoveredId = null)}>{label}</span
+						>
 					{/each}
 				</div>
 				<div class="navigation-content-main__side">
@@ -101,9 +110,15 @@
 		width: fit-content;
 		display: flex;
 		align-items: center;
+		@media (max-width: 576px) {
+			flex-direction: row-reverse;
+		}
 		&__label {
 			padding-left: 15px;
 			cursor: pointer;
+			@media (max-width: 576px) {
+				padding-right: 15px;
+			}
 		}
 	}
 	.navigation-content {
@@ -130,6 +145,7 @@
 			}
 			@media (max-width: 576px) {
 				margin-top: 20px;
+				margin-left: auto;
 			}
 			&__button {
 				--size: 20px;
@@ -165,6 +181,9 @@
 				padding-left: 15px;
 				cursor: pointer;
 				font-weight: 500;
+				@media (max-width: 576px) {
+					display: none;
+				}
 			}
 		}
 		&-main {
@@ -176,10 +195,12 @@
 				gap: 40px;
 				padding-top: 40px;
 			}
+			@media (max-width: 576px) {
+				padding-top: 0;
+			}
 			&__nav {
 				display: flex;
 				flex-direction: column;
-				gap: 25px;
 			}
 			&__link {
 				color: var(--clr-secondary);
@@ -187,13 +208,24 @@
 				font-weight: bold;
 				width: fit-content;
 				text-decoration: none;
-				transition: 0.2s;
+				transition: 0.4s ease-out;
 				white-space: nowrap;
 				font-family: 'Philosopher', serif;
 				cursor: pointer;
 				position: relative;
+				padding-block: 15px;
 				&:hover {
-					padding-left: 30px;
+					padding-left: 20px;
+				}
+				&.blurred {
+					opacity: 0.3;
+					filter: blur(2px);
+				}
+				&:first-child {
+					padding-top: 0;
+				}
+				&:last-child {
+					padding-bottom: 0;
 				}
 			}
 			&__side {
@@ -232,12 +264,13 @@
 			position: absolute;
 			left: -7vw;
 			top: calc(100% - 21vw);
-			font-size: 40vw;
+			font-size: 42vw;
 			line-height: 0.7;
+			font-family: 'Helvetica';
 			pointer-events: none;
 			color: transparent;
-			-webkit-text-stroke: 1px var(--clr-dark-gray);
-			opacity: 0.1;
+			-webkit-text-stroke: 2px var(--clr-dark-gray);
+			opacity: 0.05;
 		}
 	}
 </style>
