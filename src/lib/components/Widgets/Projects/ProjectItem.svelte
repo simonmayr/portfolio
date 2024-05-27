@@ -21,7 +21,7 @@
 			delay: 0.3,
 			scrollTrigger: {
 				trigger: projectItemEl,
-				start: 'top 80%'
+				start: 'top 60%'
 			}
 		});
 
@@ -32,7 +32,7 @@
 			duration: 1,
 			scrollTrigger: {
 				trigger: projectItemEl,
-				start: 'top 80%'
+				start: 'top 60%'
 			}
 		});
 	});

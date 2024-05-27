@@ -17,8 +17,8 @@
 			filter: 'blur(5px)',
 			scrollTrigger: {
 				trigger: '.about__text',
-				start: 'top 80%',
-				end: 'bottom 60%',
+				start: 'top 85%',
+				end: 'bottom 80%',
 				scrub: 1
 			},
 			stagger: {
