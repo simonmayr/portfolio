@@ -5,6 +5,7 @@
 	import TextAnimation from '$lib/components/UI/TextAnimation.svelte';
 	import buddhaNepaliKitchen from '$lib/assets/images/projects/buddha.png';
 	import mkv from '$lib/assets/images/projects/mkv.png';
+	import vl from '$lib/assets/images/projects/vl.png';
 
 	let headlineEl: HTMLElement;
 	let teaserEl: HTMLElement;
@@ -27,9 +28,7 @@
 		<h2 class="projects__headline headline" bind:this={headlineEl}>
 			<TextAnimation text="Projekte" textSuffix="." scrollTrigger={headlineEl} />
 		</h2>
-		<p class="projects__teaser" bind:this={teaserEl}>
-
-		</p>
+		<p class="projects__teaser" bind:this={teaserEl}></p>
 		<div class="projects__wrapper">
 			<ProjectItem
 				title="Musikkapelle Völs"
@@ -44,6 +43,12 @@
 				link="https://www.buddha-nepali-kitchen.at/"
 				badges={['Typo3', 'Mask']}
 				image={buddhaNepaliKitchen}
+			/>
+			<ProjectItem
+				title="Völs Läuft"
+				description="Völs Läuft ist ein jährlicher Laufevent in Völs. Die Website wurde mit VueJs umgesetzt um zahlreiche Animationen und Interaktionen zu ermöglichen."
+				badges={['VueJs', 'AnimeJs']}
+				image={vl}
 			/>
 		</div>
 	</div>
@@ -61,7 +66,7 @@
 			margin-top: 100px;
 			display: flex;
 			flex-direction: column;
-			gap: 100px;
+			gap: 180px;
 			@media (max-width: 768px) {
 				margin-top: 70px;
 				gap: 70px;

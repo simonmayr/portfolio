@@ -22,7 +22,7 @@
 			<SkillItem
 				icon={faCode}
 				headline="Individualsoftware"
-				text="Maßgeschneiderte Individualsoftware, die exakt auf die spezifischen Anforderungen und Herausforderungen Ihres Unternehmens abgestimmt ist."
+				text="Maßgeschneiderte Individualsoftware, die exakt auf die spezifischen Anforderungen eines Systems zugeschnitten sind."
 			/>
 			<SkillItem
 				icon={faTypo3}
