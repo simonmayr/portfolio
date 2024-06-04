@@ -28,22 +28,21 @@
 			<TextAnimation text="Projekte" textSuffix="." scrollTrigger={headlineEl} />
 		</h2>
 		<p class="projects__teaser" bind:this={teaserEl}>
-			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-			invidunt ut labore.
+
 		</p>
 		<div class="projects__wrapper">
 			<ProjectItem
 				title="Musikkapelle Völs"
-				description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore"
+				description="Ob Veranstaltungen, News oder Bilder zum letzten Konzert - die Website der Musikkapelle Völs bietet alles auf einen Blick."
 				link="https://www.mk-voels.at/"
-				badges={['Typo3', 'PHP']}
+				badges={['Typo3', 'Svelte', 'APIs']}
 				image={mkv}
 			/>
 			<ProjectItem
 				title="Buddha Nepali Kitchen"
 				description="Buddha Nepali Kitchen ist ein nepalesisches Restaurant in Innsbruck. Die Website wurde mit Typo3 umgesetzt."
 				link="https://www.buddha-nepali-kitchen.at/"
-				badges={['Typo3', 'PHP']}
+				badges={['Typo3', 'Mask']}
 				image={buddhaNepaliKitchen}
 			/>
 		</div>

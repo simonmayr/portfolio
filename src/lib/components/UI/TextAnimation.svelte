@@ -77,7 +77,7 @@
 		&__blend {
 			position: absolute;
 			right: 0;
-			top: 0;
+			top: 15%;
 			bottom: 0;
 			width: 0%;
 			background-color: var(--clr-white);

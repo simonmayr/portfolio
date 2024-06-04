@@ -58,6 +58,7 @@
 							class="navigation-content-main__link {hoveredId !== id && hoveredId !== null
 								? 'blurred'
 								: ''}"
+							tabindex="0"
 							on:click={() => navigate(id)}
 							on:mouseover={() => (hoveredId = id)}
 							on:mouseout={() => (hoveredId = null)}>{label}</span

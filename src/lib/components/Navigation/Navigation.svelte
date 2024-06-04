@@ -33,7 +33,11 @@
 				<div class="navigation__burger">
 					<NavigationBurger />
 				</div>
-				<div class="navigation__logo">simon<span class="clr-primary ff-philosopher">.</span></div>
+				<div class="navigation__logo">
+					<a href="https://www.simonmayr.at"
+						>simon<span class="clr-primary ff-philosopher">.</span></a
+					>
+				</div>
 				<div class="navigation__social">
 					<a href="https://www.instagram.com/simon_mayrr" target="_blank"
 						><Fa icon={faInstagram} scale={1.4} /></a
@@ -79,6 +83,10 @@
 				text-align: left;
 				order: -1;
 			}
+			a {
+				color: var(--clr-white);
+				text-decoration: none;
+			}
 		}
 		&__burger {
 			@media (max-width: 576px) {
@@ -96,7 +104,7 @@
 				display: none;
 			}
 			a {
-				color: white;
+				color: var(--clr-white);
 			}
 		}
 	}

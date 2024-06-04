@@ -3,17 +3,17 @@
 	import Skills from '$lib/components/Widgets/Skills/Skills.svelte';
 	import About from '$lib/components/Widgets/About/About.svelte';
 	import Projects from '$lib/components/Widgets/Projects/Projects.svelte';
+	import Footer from '$lib/components/Footer/Footer.svelte';
 </script>
 
 <svelte:head>
 	<title>simon.</title>
-	<meta name="description" content="This is where the description goes for SEO" />
-	<meta name="keywords" content="Simon, Mayr, " />
+	<meta name="description" content="Mein Name ist Simon Mayr und ich bin ein Webentwickler aus Tirol. ✓ Webseiten ✓ Individualsoftware ✓ Deisng ✓ Typo3" />
+	<meta name="keywords" content="Simon Mayr, Webentwicklung, Typo3, Software, " />
 </svelte:head>
-
-
 
 <Header />
 <About />
 <Skills />
 <Projects />
+<Footer />
