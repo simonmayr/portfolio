@@ -2,7 +2,7 @@
 	import Fa from 'svelte-fa';
 	import Button from '../UI/Button.svelte';
 	import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-	import { goto } from '$app/navigation';
+	import { navigate } from '$lib/utils/navigate';
 
 	let navOpen = false;
 	let hoveredId: string | null = null;
@@ -26,18 +26,9 @@
 		}
 	];
 
-	const navigate = async (e: MouseEvent, url: string, id: string | null = null) => {
-		e.preventDefault();
+	const callNavigate = (e: MouseEvent, path: string, id: string | null = null) => {
 		navOpen = false;
-
-		if (window.location.pathname !== url) {
-			await goto(url);
-		}
-
-		if (id !== null) {
-			const element = document.getElementById(id);
-			setTimeout(() => element?.scrollIntoView({ behavior: 'smooth' }), 200);
-		}
+		navigate(e, path, id);
 	};
 </script>
 
@@ -68,7 +59,7 @@
 								? 'blurred'
 								: ''}"
 							tabindex="0"
-							on:click={(e) => navigate(e, '/', id)}
+							on:click={(e) => callNavigate(e, '/', id)}
 							on:mouseover={() => (hoveredId = id)}
 							on:mouseout={() => (hoveredId = null)}>{label}</span
 						>
@@ -76,9 +67,9 @@
 				</div>
 				<div class="navigation-content-main__side">
 					<div class="navigation-content-main__privacy">
-						<a href="/kontakt" on:click={(e) => navigate(e, '/', 'contact')}>Kontakt</a>
-						<a href="/impressum" on:click={(e) => navigate(e, '/impressum')}>Impressum</a>
-						<a href="/cookies" on:click={(e) => navigate(e, '/cookies')}>Cookies</a>
+						<a href="/" on:click={(e) => callNavigate(e, '/', 'footer')}>Kontakt</a>
+						<a href="/impressum" on:click={(e) => callNavigate(e, '/impressum')}>Impressum</a>
+						<a href="/cookies" on:click={(e) => callNavigate(e, '/cookies')}>Cookies</a>
 					</div>
 					<div class="navigation-content-main__footer">
 						<div class="navigation-content-main__social">

@@ -23,7 +23,7 @@
 	});
 </script>
 
-<section class="projects" id="projects">
+<section class="section projects" id="projects">
 	<div class="container">
 		<h2 class="projects__headline headline" bind:this={headlineEl}>
 			<TextAnimation text="Projekte" textSuffix="." scrollTrigger={headlineEl} />
@@ -56,11 +56,6 @@
 
 <style lang="scss">
 	.projects {
-		padding-block: 100px 50px;
-		position: relative;
-		@media (max-width: 768px) {
-			padding-block: 70px 30px;
-		}
 		&__wrapper {
 			width: 100%;
 			margin-top: 100px;

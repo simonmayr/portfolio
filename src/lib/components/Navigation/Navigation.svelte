@@ -4,6 +4,7 @@
 	import { gsap } from 'gsap';
 	import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 	import { getContext, onMount } from 'svelte';
+	import { navigate } from '$lib/utils/navigate';
 
 	let loadingDuration = getContext<number>('loadingDuration');
 
@@ -17,7 +18,7 @@
 		gsap.from('.navigation', {
 			opacity: 0,
 			duration: 1,
-			delay: loadingDuration + 0.6,
+			delay: loadingDuration + 0.4,
 			ease: 'power3.inOut'
 		});
 		handeScroll();
@@ -34,7 +35,7 @@
 					<NavigationBurger />
 				</div>
 				<div class="navigation__logo">
-					<a href="https://www.simonmayr.at"
+					<a href="https://www.simonmayr.at" on:click={(e) => navigate(e, '/')}
 						>simon<span class="clr-primary ff-philosopher">.</span></a
 					>
 				</div>
@@ -56,6 +57,7 @@
 		position: fixed;
 		inset: 0 0 auto 0;
 		z-index: 10;
+		view-transition-name: navigation;
 		&__wrapper {
 			padding: 30px 0;
 			transition: 0.2s;

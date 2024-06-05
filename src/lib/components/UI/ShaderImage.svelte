@@ -235,10 +235,10 @@
 	});
 </script>
 
-<div bind:this={canvas} class="project-item-image"></div>
+<div bind:this={canvas} class="shader-image"></div>
 
 <style lang="scss">
-	.project-item-image {
+	.shader-image {
 		height: 100%;
 		width: 100%;
 	}

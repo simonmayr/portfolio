@@ -28,7 +28,7 @@
 	});
 </script>
 
-<section class="about" id="about">
+<section class="section about" id="about">
 	<div class="container">
 		<div class="about__content">
 			<h2 class="about__headline headline" bind:this={headlineEl}>
@@ -57,11 +57,6 @@
 
 <style lang="scss">
 	.about {
-		margin-top: 50px;
-		padding-block: 100px 50px;
-		@media (max-width: 768px) {
-			padding-block: 70px 30px;
-		}
 		&__headline {
 			margin-bottom: 20px;
 		}

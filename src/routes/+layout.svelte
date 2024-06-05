@@ -39,4 +39,25 @@
 		background-image: var(--noise-url);
 		background-size: 100px;
 	}
+
+	@keyframes pageIn {
+		from {
+			transform: translateY(100%);
+		}
+	}
+
+	@keyframes pageOut {
+		to {
+			translate: 0 20px;
+			scale: 0.85;
+		}
+	}
+
+	:root::view-transition-old(root) {
+		animation: 1s cubic-bezier(0.4, 0, 0.2, 1) both pageOut;
+	}
+
+	:root::view-transition-new(root) {
+		animation: 1s cubic-bezier(0.4, 0, 0.2, 1) both pageIn;
+	}
 </style>

@@ -6,25 +6,23 @@
 
 	let loadingDuration = getContext<number>('loadingDuration');
 
-	let headerEl: HTMLElement;
-
 	onMount(() => {});
 </script>
 
-<div class="header" bind:this={headerEl}>
+<div class="header">
 	<HeaderBackground />
 	<div class="header__hero">
 		<div class="hero-text">
-			<TextAnimation delay={loadingDuration} text="Simon Mayr" />
+			<TextAnimation delay={loadingDuration - 0.4} text="Simon Mayr" />
 		</div>
 		<div class="hero-text">
 			<span class="hero-text__content"
-				><TextAnimation delay={loadingDuration + 0.2} text="Webseiten " textSuffix="&" />
+				><TextAnimation delay={loadingDuration - 0.4 + 0.2} text="Webseiten " textSuffix="&" />
 			</span>
 		</div>
 		<div class="hero-text">
 			<span class="hero-text__content"
-				><TextAnimation delay={loadingDuration + 0.4} text="Design" /></span
+				><TextAnimation delay={loadingDuration - 0.4 + 0.4} text="Design" /></span
 			>
 		</div>
 	</div>

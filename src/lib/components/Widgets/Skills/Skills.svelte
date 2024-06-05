@@ -1,13 +1,13 @@
 <script lang="ts">
 	import SkillItem from './SkillItem.svelte';
 	import TextAnimation from '$lib/components/UI/TextAnimation.svelte';
-	import { faCodepen, faFigma, faTypo3 } from '@fortawesome/free-brands-svg-icons';
-	import { faSearch, faCode, faLaptop, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+	import { faFigma, faTypo3 } from '@fortawesome/free-brands-svg-icons';
+	import { faSearch, faCode, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 
 	let headlineEl: HTMLElement;
 </script>
 
-<section class="skills" id="skills">
+<section class="section skills" id="skills">
 	<div class="container">
 		<h2 class="skills__headline headline" bind:this={headlineEl}>
 			<TextAnimation text="Skills" textSuffix="." scrollTrigger={headlineEl} />
@@ -45,10 +45,6 @@
 
 <style lang="scss">
 	.skills {
-		padding-block: 100px 50px;
-		@media (max-width: 768px) {
-			padding-block: 70px 30px;
-		}
 		&__grid {
 			display: grid;
 			grid-template-columns: repeat(6, 1fr);
