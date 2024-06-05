@@ -9,6 +9,6 @@ export const navigate = async (e: MouseEvent, url: string, id: string | null = n
 
 	if (id !== null) {
 		const element = document.getElementById(id);
-		setTimeout(() => element?.scrollIntoView({ behavior: 'smooth' }), 200);
+		setTimeout(() => element?.scrollIntoView({ behavior: 'smooth' }), 300);
 	}
 };

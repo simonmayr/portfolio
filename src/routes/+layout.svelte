@@ -36,8 +36,14 @@
 
 <style lang="scss">
 	.app-layout {
+		background-color: var(--clr-secondary);
 		background-image: var(--noise-url);
 		background-size: 100px;
+		min-height: 100%;
+	}
+
+	.app-content {
+		padding-top: 1px;
 	}
 
 	@keyframes pageIn {
@@ -48,8 +54,8 @@
 
 	@keyframes pageOut {
 		to {
-			translate: 0 20px;
-			scale: 0.85;
+			translate: 0 50px;
+			scale: 0.9;
 		}
 	}
 
@@ -59,5 +65,6 @@
 
 	:root::view-transition-new(root) {
 		animation: 1s cubic-bezier(0.4, 0, 0.2, 1) both pageIn;
+		animation-delay: 500ms;
 	}
 </style>
