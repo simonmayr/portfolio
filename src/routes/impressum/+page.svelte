@@ -1,6 +1,7 @@
 <script lang="ts">
 	import TextAnimation from '$lib/components/UI/TextAnimation.svelte';
 	import Text from '$lib/components/Widgets/Text/Text.svelte';
+	import { EMAIL } from '$lib/utils/email';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 
@@ -41,6 +42,6 @@
 			Österreich
 		</p>
 
-		<p><a href="mailto:hello@simonmayr.at">hello@simonmayr.at</a></p>
+		<p><a href="mailto:{EMAIL}">{EMAIL}</a></p>
 	</div>
 </Text>

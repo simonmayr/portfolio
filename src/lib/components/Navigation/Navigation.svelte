@@ -2,7 +2,7 @@
 	import Fa from 'svelte-fa';
 	import NavigationBurger from './NavigationBurger.svelte';
 	import { gsap } from 'gsap';
-	import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+	import { faInstagram, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 	import { getContext, onMount } from 'svelte';
 	import { navigate } from '$lib/utils/navigate';
 
@@ -43,9 +43,10 @@
 					<a href="https://www.instagram.com/simon_mayrr" target="_blank"
 						><Fa icon={faInstagram} scale={1.4} /></a
 					>
-					<a href="https://www.linkedin.com/in/simon-mayr-365349248/" target="_blank"
+					<a href="https://www.linkedin.com/in/simon-mayr-365349248" target="_blank"
 						><Fa icon={faLinkedinIn} scale={1.4} /></a
 					>
+					<a href="https://x.com/CIM0N_" target="_blank"><Fa icon={faXTwitter} scale={1.4} /></a>
 				</div>
 			</div>
 		</div>

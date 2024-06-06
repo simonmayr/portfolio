@@ -18,7 +18,7 @@
 			scrollTrigger: {
 				trigger: '.about__text',
 				start: 'top 85%',
-				end: 'bottom 80%',
+				end: 'bottom 70%',
 				scrub: 1
 			},
 			stagger: {

@@ -3,6 +3,7 @@
 	import Button from '../UI/Button.svelte';
 	import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 	import { navigate } from '$lib/utils/navigate';
+	import { EMAIL } from '$lib/utils/email';
 
 	let navOpen = false;
 	let hoveredId: string | null = null;
@@ -69,7 +70,6 @@
 					<div class="navigation-content-main__privacy">
 						<a href="/" on:click={(e) => callNavigate(e, '/', 'footer')}>Kontakt</a>
 						<a href="/impressum" on:click={(e) => callNavigate(e, '/impressum')}>Impressum</a>
-						<a href="/cookies" on:click={(e) => callNavigate(e, '/cookies')}>Cookies</a>
 					</div>
 					<div class="navigation-content-main__footer">
 						<div class="navigation-content-main__social">
@@ -80,7 +80,7 @@
 								><Fa scale={1.4} icon={faLinkedinIn} /></a
 							>
 						</div>
-						<a href="mailto:hello@simonmayr.at">hello@simonmayr.at</a>
+						<a href="mailto:{EMAIL}">{EMAIL}</a>
 					</div>
 				</div>
 			</div>
@@ -101,6 +101,9 @@
 		scale: 0;
 		border-radius: 100%;
 		transition: 0.4s;
+		@media (max-width: 768px) {
+			left: calc(50% - -35px);
+		}
 		.navOpen & {
 			scale: 1;
 			transition: 0.8s;

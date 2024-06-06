@@ -136,17 +136,10 @@
 		}
 		&--nav {
 			--_size: 25px;
-			cursor: pointer;
-			position: relative;
 			width: var(--_size);
 			height: var(--_size);
 			border: 2px solid var(--clr-primary);
 			border-radius: 100%;
-			background-color: transparent;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			overflow: hidden;
 			padding: 0;
 		}
 		&-flair {
