@@ -28,7 +28,7 @@
 		<h2 class="projects__headline headline" bind:this={headlineEl}>
 			<TextAnimation text="Projekte" textSuffix="." scrollTrigger={headlineEl} />
 		</h2>
-		<p class="projects__teaser" bind:this={teaserEl}></p>
+		<p class="projects__teaser" bind:this={teaserEl}>Verschaffe dir einen Einblick in meine neuesten Projekte</p>
 		<div class="projects__wrapper">
 			<ProjectItem
 				title="Musikkapelle Völs"
@@ -46,7 +46,7 @@
 			/>
 			<ProjectItem
 				title="Völs Läuft"
-				description="Völs Läuft ist ein jährlicher Laufevent in Völs. Die Website wurde mit VueJs umgesetzt um zahlreiche Animationen und Interaktionen zu ermöglichen."
+				description="Völs Läuft ist ein jährlicher Laufevent in Völs. Die Website wurde mit VueJs umgesetzt, um zahlreiche Animationen und Interaktionen zu ermöglichen."
 				badges={['VueJs', 'AnimeJs']}
 				image={vl}
 			/>

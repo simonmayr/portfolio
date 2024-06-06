@@ -27,7 +27,7 @@
 			<SkillItem
 				icon={faTypo3}
 				headline="Typo3"
-				text="Mit Typo3 entwickle ich flexible und leistungsstarke Websites die sich durch Benutzerfreundlichkeit auszeichnen."
+				text="Mit Typo3 entwickle ich flexible und leistungsstarke Websites, die sich durch Benutzerfreundlichkeit auszeichnen."
 			/>
 			<SkillItem
 				icon={faSearch}

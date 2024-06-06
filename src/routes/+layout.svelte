@@ -7,6 +7,7 @@
 	import { onNavigate } from '$app/navigation';
 	import { setContext } from 'svelte';
 	import { gsap } from 'gsap';
+	import Footer from '$lib/components/Footer/Footer.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -32,6 +33,7 @@
 	<div class="app-content">
 		<slot />
 	</div>
+	<Footer />
 </div>
 
 <style lang="scss">

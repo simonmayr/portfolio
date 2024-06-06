@@ -71,6 +71,9 @@
 			align-items: center;
 			a {
 				color: var(--clr-white);
+				&:hover {
+					color: var(--clr-primary);
+				}
 			}
 			&__social {
 				display: flex;
