@@ -60,7 +60,8 @@
 						font-size: 54px;
 					}
 					@media (max-width: 576px) {
-						font-size: 10vw;
+						translate: 0 0;
+						font-size: clamp(30.6px, 9.7vw, 100vw);
 					}
 				}
 			}
@@ -69,6 +70,11 @@
 			padding-top: 30px;
 			display: flex;
 			align-items: center;
+			@media (max-width: 768px) {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 20px;
+			}
 			a {
 				color: var(--clr-white);
 				&:hover {
@@ -79,11 +85,18 @@
 				display: flex;
 				gap: 20px;
 				width: 50%;
+				@media (max-width: 768px) {
+					width: 100%;
+					justify-content: space-between;
+				}
 			}
 			&__legal {
 				width: 50%;
 				display: flex;
 				justify-content: space-between;
+				@media (max-width: 768px) {
+					width: 100%;
+				}
 			}
 		}
 	}
