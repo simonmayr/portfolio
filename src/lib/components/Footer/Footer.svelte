@@ -73,7 +73,7 @@
 			@media (max-width: 768px) {
 				flex-direction: column;
 				align-items: flex-start;
-				gap: 20px;
+				gap: 50px;
 			}
 			a {
 				color: var(--clr-white);
@@ -87,7 +87,6 @@
 				width: 50%;
 				@media (max-width: 768px) {
 					width: 100%;
-					justify-content: space-between;
 				}
 			}
 			&__legal {
