@@ -28,7 +28,7 @@
 		<h2 class="projects__headline headline" bind:this={headlineEl}>
 			<TextAnimation text="Projekte" textSuffix="." scrollTrigger={headlineEl} />
 		</h2>
-		<p class="projects__teaser" bind:this={teaserEl}>Verschaffe dir einen Einblick in meine neuesten Projekte</p>
+		<p class="projects__teaser" bind:this={teaserEl}>Verschaffe dir einen Überblick meiner letzten Arbeiten.</p>
 		<div class="projects__wrapper">
 			<ProjectItem
 				title="Musikkapelle Völs"
