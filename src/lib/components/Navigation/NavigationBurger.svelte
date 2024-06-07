@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Fa from 'svelte-fa';
 	import Button from '../UI/Button.svelte';
-	import { faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+	import { faInstagram, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 	import { navigate } from '$lib/utils/navigate';
 	import { EMAIL } from '$lib/utils/email';
 
@@ -79,6 +79,7 @@
 							<a href="https://www.linkedin.com/in/simon-mayr-365349248/" target="_blank"
 								><Fa scale={1.4} icon={faLinkedinIn} /></a
 							>
+							<a href="https://x.com/CIM0N_" target="_blank"><Fa icon={faXTwitter} scale={1.4} /></a>
 						</div>
 						<a href="mailto:{EMAIL}">{EMAIL}</a>
 					</div>

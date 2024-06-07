@@ -8,6 +8,7 @@
 	export let link: string | null = null;
 	export let image: string;
 	export let badges: string[];
+	export let reverseAnimationDirection: boolean = false;
 
 	let projectItemEl: HTMLElement;
 	let projectItemContentEl: HTMLElement;
@@ -18,7 +19,6 @@
 			opacity: 0,
 			ease: 'power3.inOut',
 			duration: 1,
-			delay: 0.3,
 			scrollTrigger: {
 				trigger: projectItemEl,
 				start: 'top 60%'
@@ -27,7 +27,7 @@
 
 		gsap.from(projectItemImageEl, {
 			opacity: 0,
-			clipPath: 'circle(0% at 50% 50%)',
+			clipPath: reverseAnimationDirection ? 'circle(0% at 0% 50%)' : 'circle(0% at 100% 50%)',
 			ease: 'power3.out',
 			duration: 1,
 			scrollTrigger: {
@@ -84,6 +84,8 @@
 			width: 60%;
 			filter: brightness(0.9);
 			clip-path: circle(70% at 50% 50%);
+			border-radius: 16px;
+			overflow: hidden;
 			@media (max-width: 991px) {
 				width: 80%;
 			}
@@ -93,7 +95,6 @@
 			img {
 				width: 100%;
 				height: auto;
-				border-radius: 16px;
 			}
 		}
 		&__header {

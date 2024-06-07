@@ -28,7 +28,9 @@
 		<h2 class="projects__headline headline" bind:this={headlineEl}>
 			<TextAnimation text="Projekte" textSuffix="." scrollTrigger={headlineEl} />
 		</h2>
-		<p class="projects__teaser" bind:this={teaserEl}>Verschaffe dir einen Überblick meiner letzten Arbeiten.</p>
+		<p class="projects__teaser" bind:this={teaserEl}>
+			Verschaffe dir einen Überblick über eine ausgewählte Sammlung abgeschlossener Arbeiten.
+		</p>
 		<div class="projects__wrapper">
 			<ProjectItem
 				title="Musikkapelle Völs"
@@ -43,6 +45,7 @@
 				link="https://www.buddha-nepali-kitchen.at/"
 				badges={['Typo3', 'Mask']}
 				image={buddhaNepaliKitchen}
+				reverseAnimationDirection={true}
 			/>
 			<ProjectItem
 				title="Völs Läuft"
@@ -68,7 +71,7 @@
 			}
 		}
 		&__teaser {
-			max-width: 300px;
+			max-width: 290px;
 			line-height: 1.55;
 			margin-block: 20px 0;
 		}
