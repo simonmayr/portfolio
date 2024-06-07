@@ -1,4 +1,4 @@
-<div class="error-page">
+<div class="error-page ff-philosopher">
 	<h1>404</h1>
 </div>
 
@@ -9,7 +9,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-family: 'Philosopher';
 		color: var(--clr-primary);
 		font-size: 10vw;
 	}

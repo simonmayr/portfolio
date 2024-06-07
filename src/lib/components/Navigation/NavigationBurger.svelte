@@ -56,7 +56,7 @@
 						<!-- svelte-ignore a11y-mouse-events-have-key-events a11y-no-static-element-interactions a11y-click-events-have-key-events -->
 						<span
 							role="link"
-							class="navigation-content-main__link {hoveredId !== id && hoveredId !== null
+							class="navigation-content-main__link ff-philosopher {hoveredId !== id && hoveredId !== null
 								? 'blurred'
 								: ''}"
 							tabindex="0"
@@ -215,7 +215,6 @@
 				text-decoration: none;
 				transition: 0.4s ease-out;
 				white-space: nowrap;
-				font-family: 'Philosopher', serif;
 				cursor: pointer;
 				position: relative;
 				padding-block: 15px;
