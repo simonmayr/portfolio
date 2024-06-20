@@ -9,13 +9,15 @@ RUN npm install -g pnpm
 WORKDIR /app
 
 # Copy package.json and pnpm-lock.yaml
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml .
 
 # Clean install all node modules
 RUN pnpm i
 
 # Copy all local files into the image
-COPY . .
+COPY vite.config.ts svelte.config.js .
+COPY src ./src
+COPY static ./static
 
 # Build SvelteKit app
 RUN pnpm build
