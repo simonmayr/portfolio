@@ -1,15 +1,19 @@
 import { error } from '@sveltejs/kit';
-import * as dns from 'dns'; // Import the dns module
+import * as dns from 'dns';
 import tldjs from 'tldjs';
 
-const dnsPromises = dns.promises; // Use the Promise-based API of the dns module
-
 export async function GET({ url }) {
+	const dnsPromises = dns.promises;
 	const domainParam = String(url.searchParams.get('domain'));
-	const domain = tldjs.getDomain(domainParam);
+	const subdomain = tldjs.getSubdomain(domainParam);
+	let domain = tldjs.getDomain(domainParam);
 
 	if (!domain) {
 		error(400, 'Invalid domain name');
+	}
+
+	if (subdomain) {
+		domain = `${subdomain}.${domain}`;
 	}
 
 	try {
