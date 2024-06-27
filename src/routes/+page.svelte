@@ -9,7 +9,7 @@
 	<title>simon.</title>
 	<meta
 		name="description"
-		content="Mein Name ist Simon Mayr und ich bin ein Webentwickler aus Tirol. ✓ Webseiten ✓ Individualsoftware ✓ Deisng ✓ Typo3"
+		content="Mein Name ist Simon Mayr und ich bin ein Webentwickler aus Tirol. ✓ Webseiten ✓ Typo3 ✓ Individualsoftware ✓ Design"
 	/>
 	<meta name="keywords" content="Simon Mayr, Webentwicklung, Typo3, Software, Design" />
 </svelte:head>
