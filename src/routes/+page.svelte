@@ -9,9 +9,12 @@
 	<title>simon.</title>
 	<meta
 		name="description"
-		content="Mein Name ist Simon Mayr und ich bin ein Webentwickler aus Tirol. ✓ Webseiten ✓ Typo3 ✓ Individualsoftware ✓ Design"
+		content="Hallo, mein Name ist Simon Mayr und ich bin ein leidenschaftlicher Webentwickler aus Tirol. Seit Jahren fasziniert mich die Erstellung professioneller und kreativer Webseiten sowie Webanwendungen. ✓ Webseiten ✓ Typo3 ✓ Individualsoftware ✓ Design"
 	/>
-	<meta name="keywords" content="Simon Mayr, Webentwicklung, Typo3, Software, Design" />
+	<meta
+		name="keywords"
+		content="Simon Mayr Webentwickler, Webentwickler Tirol, Professionelle Webseiten Tirol, Kreative Webseitenentwicklung, Webentwicklung Tirol, Webanwendungen erstellen, Webseiten Typo3, Typo3 Experte, Individuelle Softwareentwicklung, Individuelle Webanwendungen, Webdesign Tirol, Professionelles Webdesign, Kreatives Webdesign, Webdesigner Simon Mayr, Custom Web Solutions Tirol, Tiroler Webentwickler, Responsive Webdesign, Modernes Webdesign, Benutzerfreundliche Webseiten, SEO-freundliche Webseiten, Völs, Tirol, Österreich"
+	/>
 </svelte:head>
 
 <Header />
