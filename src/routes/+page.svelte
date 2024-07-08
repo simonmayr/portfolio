@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>simon.</title>
+	<title>simon. | Webseiten ✓ Typo3 ✓ Design</title>
 	<meta
 		name="description"
 		content="Hallo, mein Name ist Simon Mayr und ich bin ein leidenschaftlicher Webentwickler aus Tirol. Seit Jahren fasziniert mich die Erstellung professioneller und kreativer Webseiten sowie Webanwendungen. ✓ Webseiten ✓ Typo3 ✓ Individualsoftware ✓ Design"
