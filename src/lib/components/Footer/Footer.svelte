@@ -14,7 +14,7 @@
 				<b>Social</b>
 				<a href="https://www.instagram.com/simon_mayrr" target="_blank">Instagram</a>
 				<a href="https://www.linkedin.com/in/simon-mayr-365349248" target="_blank">LinkedIn</a>
-				<a href="https://x.com/CIM0N_" target="_blank">X</a>
+				<a href="https://x.com/simonmayr_at" target="_blank">X</a>
 			</div>
 			<div class="footer-bottom__legal">
 				<a href="/impressum">Impressum</a>

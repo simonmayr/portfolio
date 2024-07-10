@@ -46,7 +46,7 @@
 					<a href="https://www.linkedin.com/in/simon-mayr-365349248" target="_blank"
 						><Fa icon={faLinkedinIn} scale={1.4} /></a
 					>
-					<a href="https://x.com/CIM0N_" target="_blank"><Fa icon={faXTwitter} scale={1.4} /></a>
+					<a href="https://x.com/simonmayr_at" target="_blank"><Fa icon={faXTwitter} scale={1.4} /></a>
 				</div>
 			</div>
 		</div>
