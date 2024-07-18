@@ -70,6 +70,7 @@
 					<div class="navigation-content-main__privacy">
 						<a href="/" on:click={(e) => callNavigate(e, '/', 'footer')}>Kontakt</a>
 						<a href="/impressum" on:click={(e) => callNavigate(e, '/impressum')}>Impressum</a>
+						<a href="/agb/agb-verkauf-lieferung-organisationsprogrammierleistungen-b2.pdf" target="_blank">AGB</a>
 					</div>
 					<div class="navigation-content-main__footer">
 						<div class="navigation-content-main__social">

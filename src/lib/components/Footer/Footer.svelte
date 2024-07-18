@@ -16,8 +16,14 @@
 				<a href="https://www.linkedin.com/in/simon-mayr-365349248" target="_blank">LinkedIn</a>
 				<a href="https://x.com/simonmayr_at" target="_blank">X</a>
 			</div>
-			<div class="footer-bottom__legal">
-				<a href="/impressum">Impressum</a>
+			<div class="footer-bottom__right">
+				<div class="footer-bottom__legal">
+					<a href="/impressum">Impressum</a>
+					<a
+						href="/agb/agb-verkauf-lieferung-organisationsprogrammierleistungen-b2.pdf"
+						target="_blank">AGB</a
+					>
+				</div>
 				<span>simon. © 2024</span>
 			</div>
 		</div>
@@ -89,13 +95,17 @@
 					width: 100%;
 				}
 			}
-			&__legal {
+			&__right {
 				width: 50%;
 				display: flex;
 				justify-content: space-between;
 				@media (max-width: 768px) {
 					width: 100%;
 				}
+			}
+			&__legal {
+				display: flex;
+				gap: 20px;
 			}
 		}
 	}
