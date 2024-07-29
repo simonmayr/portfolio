@@ -9,7 +9,7 @@
 	let headlineEl: HTMLElement;
 
 	const age = calculateYearsSince('2001-05-28');
-	const workExperience = calculateYearsSince('2015-8-02');
+	const workExperience = calculateYearsSince('2015-08-02');
 
 	onMount(() => {
 		gsap.from('.about__word', {
