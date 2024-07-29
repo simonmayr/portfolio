@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { gsap } from 'gsap';
 	import { getContext, onMount } from 'svelte';
-	import blob from '$lib/assets/images/header/blob.png';
+	import blob from '$lib/assets/images/header/blob.svg';
 
 	let loadingDuration = getContext<number>('loadingDuration');
 
