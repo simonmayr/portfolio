@@ -32,6 +32,7 @@
 			right: 0;
 			top: 50%;
 			transform: translateY(-50%);
+			opacity: 0.8;
 		}
 		&:after {
 			content: '';

@@ -6,10 +6,10 @@
 </script>
 
 <svelte:head>
-	<title>simon. | Webseiten ✓ Typo3 ✓ Design</title>
+	<title>Webseiten ✓ Typo3 ✓ Design | simon.</title>
 	<meta
 		name="description"
-		content="Hallo, mein Name ist Simon Mayr und ich bin ein leidenschaftlicher Webentwickler aus Tirol. Seit Jahren fasziniert mich die Erstellung professioneller und kreativer Webseiten sowie Webanwendungen. ✓ Webseiten ✓ Typo3 ✓ Individualsoftware ✓ Design ✓ Tirol"
+		content="Hallo, mein Name ist Simon Mayr und ich bin ein leidenschaftlicher Webentwickler aus Tirol. ✓ Webseiten ✓ Typo3 ✓ Individualsoftware ✓ Design ✓ Tirol"
 	/>
 	<meta
 		name="keywords"
