@@ -5,18 +5,6 @@
 	import Projects from '$lib/components/Widgets/Projects/Projects.svelte';
 </script>
 
-<svelte:head>
-	<title>Webseiten ✓ Typo3 ✓ Design | simon.</title>
-	<meta
-		name="description"
-		content="Hallo, mein Name ist Simon Mayr und ich bin ein leidenschaftlicher Webentwickler aus Tirol. ✓ Webseiten ✓ Typo3 ✓ Individualsoftware ✓ Design ✓ Tirol"
-	/>
-	<meta
-		name="keywords"
-		content="Simon Mayr Webentwickler, Web, Innsbruck, Webseiten Innsbruck, Webagentur Innsbruck, Webentwickler Tirol, Professionelle Webseiten Tirol, Professionelle Webseiten Innsbruck, Kreative Webseitenentwicklung, Webentwicklung Tirol, Webanwendungen erstellen, Webseiten Typo3, Typo3 Experte, Individuelle Softwareentwicklung, Individuelle Webanwendungen, Webdesign Tirol, Professionelles Webdesign, Kreatives Webdesign, Webdesigner Simon Mayr, Custom Web Solutions Tirol, Tiroler Webentwickler, Responsive Webdesign, Modernes Webdesign, Benutzerfreundliche Webseiten, SEO-freundliche Webseiten, Völs, Innsbruck, Tirol, Österreich"
-	/>
-</svelte:head>
-
 <Header />
 <About />
 <Skills />
