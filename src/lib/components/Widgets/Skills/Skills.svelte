@@ -1,8 +1,15 @@
 <script lang="ts">
 	import SkillItem from './SkillItem.svelte';
 	import TextAnimation from '$lib/components/UI/TextAnimation.svelte';
-	import { faFigma, faTypo3 } from '@fortawesome/free-brands-svg-icons';
-	import { faSearch, faCode, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+	import {
+		faCss3,
+		faFigma,
+		faJava,
+		faJs,
+		faSass,
+		faTypo3
+	} from '@fortawesome/free-brands-svg-icons';
+	import { faSearch, faCode, faLaptopCode, faServer } from '@fortawesome/free-solid-svg-icons';
 
 	let headlineEl: HTMLElement;
 </script>
@@ -20,24 +27,24 @@
 				text="Ich entwickle kreative und wartungsfreundliche Webseiten mit modernem Design, die perfekt auf die Bedürfnisse verschiedenster Branchen und Zielgruppen zugeschnitten sind."
 			/>
 			<SkillItem
-				icon={faCode}
-				headline="Individualsoftware"
-				text="Maßgeschneiderte Individualsoftware, die exakt auf die spezifischen Anforderungen eines Systems zugeschnitten sind."
-			/>
-			<SkillItem
 				icon={faTypo3}
 				headline="Typo3"
-				text="Mit Typo3 entwickle ich flexible und leistungsstarke Websites, die sich durch Benutzerfreundlichkeit auszeichnen."
+				text="Mit Typo3 entwickle ich flexible und leistungsstarke Websites, die sich durch Benutzerfreundlichkeit auszeichen."
 			/>
 			<SkillItem
-				icon={faSearch}
-				headline="SEO"
-				text="Optimierung Ihrer Website für Suchmaschinen (SEO), um sicherzustellen, dass Sie online besser gefunden wird."
+				icon={faJs}
+				headline="JavaScript"
+				text="Von einfachen Webseiten bishin zu komplexen Webanwenndungen nutze ich JavaScript als Programmiersprache."
 			/>
 			<SkillItem
-				icon={faFigma}
-				headline="Design"
-				text="Kreatives und ansprechendes Design, das Sie perfekt widerspiegelt und Ihre Zielgruppe begeistert."
+				icon={faSass}
+				headline="SCSS"
+				text="Ich nutze SCSS, um die Entwicklung von CSS zu beschleunigen und die Wartung von Stylesheets zu vereinfachen."
+			/>
+			<SkillItem
+				icon={faServer}
+				headline="Server"
+				text="Die Installation und Wartung der Server übernehme ich selbst um immer kontrolle über die verwendete Software zu haben."
 			/>
 		</div>
 	</div>

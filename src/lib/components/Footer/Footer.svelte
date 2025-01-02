@@ -18,10 +18,6 @@
 			</div>
 			<div class="footer-bottom__legal">
 				<a href="/impressum">Impressum</a>
-				<a
-					href="/agb/agb-verkauf-lieferung-organisationsprogrammierleistungen-b2.pdf"
-					target="_blank">AGB</a
-				>
 			</div>
 			<div class="footer-bottom__right">
 				<span>simon. © 2024</span>

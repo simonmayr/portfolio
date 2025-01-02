@@ -44,7 +44,7 @@
 			<div class="about__boxes">
 				<div class="about__boxes-left">
 					<AboutBox number={age} text="Jahre Alt" />
-					<AboutBox number={11} text="Abgeschlossene <br> Projekte" />
+					<AboutBox number={21} text="Abgeschlossene <br> Projekte" />
 				</div>
 				<div class="about__boxes-right">
 					<AboutBox number={workExperience} text="Jahre <br> Berufserfahrung" />
