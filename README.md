@@ -1,4 +1,6 @@
-# Portfolio 2024
+# Portfolio
+
+This is the repo for the [simonmayr.dev](https://www.simonmayr.dev/) website.
 
 ## Developing
 
